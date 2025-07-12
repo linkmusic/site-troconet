@@ -5,11 +5,6 @@
   "whatsapp_number": "(84) 8151-8164",
   "telegram_link": "https://t.me/suporte_trocodigital",
   "pix_key": "71181961-2356-4ba8-aeec-1997b5ff2f0d",
-  "cores": {
-    "primaria": "#FF2D8E",
-    "primaria_escura": "#D4006B",
-    "secundaria": "#FFE6F0"
-  },
   "planos_pessoais": [
     {
       "nome": "Mensal",
@@ -21,7 +16,7 @@
       "nome": "Trimestral",
       "preco": 15,
       "duracao": "90 dias de internet ilimitada",
-      "popular": true
+      "popular": false
     },
     {
       "nome": "Semestral",
@@ -46,6 +41,26 @@
       "nome": "200 Logins",
       "preco": 70,
       "beneficios": "200 acessos simultâneos;Painel básico;Suporte prioritário"
+    },
+    {
+      "nome": "300 Logins",
+      "preco": 120,
+      "beneficios": "300 acessos simultâneos;Painel premium;Suporte prioritário"
+    },
+    {
+      "nome": "1.000 Logins",
+      "preco": 140,
+      "beneficios": "1.000 acessos simultâneos;Painel premium;Suporte dedicado;Melhor custo-benefício"
+    },
+    {
+      "nome": "2.000 Logins",
+      "preco": 180,
+      "beneficios": "2.000 acessos simultâneos;Painel premium;Suporte dedicado;Conta master"
+    },
+    {
+      "nome": "10.000 Logins",
+      "preco": 240,
+      "beneficios": "10.000 acessos simultâneos;Painel empresarial;Suporte 24/7;Conta master"
     }
   ],
   "planos_revenda_creditos": [
@@ -59,5 +74,43 @@
       "preco": 30,
       "beneficios": "Sem mensalidade;Painel básico;Economia de R$10"
     }
-  ]
+  ],
+  "whatsapp_link": "https://wa.me/558481518164",
+  "hero_tagline": "Internet ilimitada 4G/5G para Android",
+  "planos_revenda_mensal": [
+    {
+      "nome": "100 Logins",
+      "preco": 60,
+      "beneficios": "100 acessos simultâneos;Painel básico;Suporte padrão"
+    },
+    {
+      "nome": "200 Logins",
+      "preco": 70,
+      "beneficios": "200 acessos simultâneos;Painel básico;Suporte prioritário"
+    },
+    {
+      "nome": "300 Logins",
+      "preco": 120,
+      "beneficios": "300 acessos simultâneos;Painel premium;Suporte prioritário"
+    },
+    {
+      "nome": "1.000 Logins",
+      "preco": 140,
+      "beneficios": "1.000 acessos simultâneos;Painel premium;Suporte dedicado;Melhor custo-benefício"
+    },
+    {
+      "nome": "2.000 Logins",
+      "preco": 180,
+      "beneficios": "2.000 acessos simultâneos;Painel premium;Suporte dedicado;Conta master"
+    },
+    {
+      "nome": "10.000 Logins",
+      "preco": 240,
+      "beneficios": "10.000 acessos simultâneos;Painel empresarial;Suporte 24/7;Conta master"
+    }
+  ],
+  "hero_title": "Troço Net",
+  "whatsapp_number": "(84) 8151-8164",
+  "telegram_link": "https://t.me/suporte_trocodigital",
+  "pix_key": "troconetpagamentos@gmail.com"
 }

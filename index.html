@@ -598,7 +598,6 @@
       margin-bottom: 10px;
     }
     
-    /* Novo CSS para o Programa de Indicação */
     .referral-program {
       background: linear-gradient(135deg, rgba(255,45,142,0.1) 0%, rgba(255,255,255,1) 100%);
       padding: 40px 30px;
@@ -668,7 +667,6 @@
       font-size: 1.1rem;
     }
     
-    /* Novo CSS para as abas de revenda */
     .pricing-tabs {
       display: flex;
       justify-content: center;
@@ -778,7 +776,6 @@
       }
     }
     
-    /* Animations */
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
@@ -799,8 +796,8 @@
     <div class="hero-container">
       <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Internet de alta velocidade">
       <div class="hero-overlay">
-        <h1>Troço Net</h1>
-        <p class="tagline">Internet ilimitada 4G/5G para Android</p>
+        <h1 id="hero-title">Troço Net</h1>
+        <p id="hero-tagline" class="tagline">Internet ilimitada 4G/5G para Android</p>
         <div class="android-only">
           <i class="fab fa-android"></i> EXCLUSIVO PARA ANDROID
         </div>
@@ -812,79 +809,8 @@
       
       <h2 class="fade-in">Planos Disponíveis</h2>
       
-      <div class="plans-grid">
-        <div class="plan-card fade-in">
-          <div class="plan-name">Mensal</div>
-          <div class="plan-price">
-            <span class="currency">R$</span>
-            <span class="integer">10</span>
-            <span class="decimal">,00</span>
-          </div>
-          <div class="plan-duration">30 dias de internet ilimitada</div>
-          <ul class="benefits-list">
-            <li>Velocidade 4G/5G</li>
-            <li>Uso ilimitado</li>
-            <li>Compatível com Vivo, Tim e Claro</li>
-            <li>Suporte especializado</li>
-            <li>Configuração fácil</li>
-          </ul>
-          <a href="https://wa.me/558481518164?text=Olá! Quero assinar o Plano Mensal de R$10 da Troço Net." class="btn">Assinar Agora</a>
+      <div id="plans-grid-pessoal" class="plans-grid">
         </div>
-        
-        <div class="plan-card fade-in delay-1 popular">
-          <div class="plan-name">Trimestral</div>
-          <div class="plan-price">
-            <span class="currency">R$</span>
-            <span class="integer">15</span>
-            <span class="decimal">,00</span>
-          </div>
-          <div class="plan-duration">90 dias de internet ilimitada</div>
-          <ul class="benefits-list">
-            <li>Velocidade 4G/5G</li>
-            <li>Uso ilimitado</li>
-            <li>Compatível com Vivo, Tim e Claro</li>
-            <li>Suporte especializado</li>
-            <li>Configuração fácil</li>
-          </ul>
-          <a href="https://wa.me/558481518164?text=Olá! Quero assinar o Plano Trimestral de R$15 da Troço Net." class="btn">Assinar Agora</a>
-        </div>
-        
-        <div class="plan-card fade-in delay-2">
-          <div class="plan-name">Semestral</div>
-          <div class="plan-price">
-            <span class="currency">R$</span>
-            <span class="integer">20</span>
-            <span class="decimal">,00</span>
-          </div>
-          <div class="plan-duration">180 dias de internet ilimitada</div>
-          <ul class="benefits-list">
-            <li>Velocidade 4G/5G</li>
-            <li>Uso ilimitado</li>
-            <li>Compatível com Vivo, Tim e Claro</li>
-            <li>Suporte especializado</li>
-            <li>Configuração fácil</li>
-          </ul>
-          <a href="https://wa.me/558481518164?text=Olá! Quero assinar o Plano Semestral de R$20 da Troço Net." class="btn">Assinar Agora</a>
-        </div>
-        
-        <div class="plan-card fade-in delay-3">
-          <div class="plan-name">Anual</div>
-          <div class="plan-price">
-            <span class="currency">R$</span>
-            <span class="integer">25</span>
-            <span class="decimal">,00</span>
-          </div>
-          <div class="plan-duration">365 dias de internet ilimitada</div>
-          <ul class="benefits-list">
-            <li>Velocidade 4G/5G</li>
-            <li>Uso ilimitado</li>
-            <li>Compatível com Vivo, Tim e Claro</li>
-            <li>Suporte especializado</li>
-            <li>Configuração fácil</li>
-          </ul>
-          <a href="https://wa.me/558481518164?text=Olá! Quero assinar o Plano Anual de R$25 da Troço Net." class="btn">Assinar Agora</a>
-        </div>
-      </div>
       
       <h2 class="fade-in">Totalmente Compatível</h2>
       
@@ -906,8 +832,7 @@
           <span>Android</span>
         </div>
       </div>
-      
-<!-- Seção de Revendas Atualizada -->
+
 <div class="business-section fade-in">
   <h2>🚀 Painel de Revendas Troço Net</h2>
   <p class="intro">Escolha o modelo que melhor se adapta ao seu negócio!</p>
@@ -917,234 +842,20 @@
     <button class="tab-btn" onclick="openTab(event, 'credits')">Plano por Créditos</button>
   </div>
   
-  <!-- TAB MENSALISTA -->
   <div id="monthly" class="tab-content" style="display: block;">
     <div class="plan-description">
       <p><i class="fas fa-calendar-alt"></i> <strong>Pague todo mês</strong> e mantenha seus logins ativos enquanto a mensalidade estiver em dia</p>
     </div>
-    
-    <div class="plans-grid">
-      <!-- Plano 100 Logins -->
-      <div class="plan-card business fade-in">
-        <div class="plan-name">100 Logins</div>
-        <div class="plan-price">
-          <span class="currency">R$</span>
-          <span class="integer">60</span>
-          <span class="decimal">,00/mês</span>
-        </div>
-        <ul class="benefits-list">
-          <li>100 acessos simultâneos</li>
-          <li>Painel básico</li>
-          <li>Suporte padrão</li>
-        </ul>
-        <a href="https://wa.me/558481518164?text=Olá! Quero assinar 100 logins por R$60/mês" class="btn btn-business">Assinar Mensal</a>
+    <div id="plans-grid-revenda-mensal" class="plans-grid">
       </div>
-      
-      <!-- Plano 200 Logins -->
-      <div class="plan-card business fade-in delay-1">
-        <div class="plan-name">200 Logins</div>
-        <div class="plan-price">
-          <span class="currency">R$</span>
-          <span class="integer">70</span>
-          <span class="decimal">,00/mês</span>
-        </div>
-        <ul class="benefits-list">
-          <li>200 acessos simultâneos</li>
-          <li>Painel básico</li>
-          <li>Suporte prioritário</li>
-        </ul>
-        <a href="https://wa.me/558481518164?text=Olá! Quero assinar 200 logins por R$70/mês" class="btn btn-business">Assinar Mensal</a>
-      </div>
-      
-      <!-- Plano 300 Logins -->
-      <div class="plan-card business fade-in delay-2">
-        <div class="plan-name">300 Logins</div>
-        <div class="plan-price">
-          <span class="currency">R$</span>
-          <span class="integer">120</span>
-          <span class="decimal">,00/mês</span>
-        </div>
-        <ul class="benefits-list">
-          <li>300 acessos simultâneos</li>
-          <li>Painel premium</li>
-          <li>Suporte prioritário</li>
-        </ul>
-        <a href="https://wa.me/558481518164?text=Olá! Quero assinar 300 logins por R$120/mês" class="btn btn-business">Assinar Mensal</a>
-      </div>
-      
-      <!-- Plano 1.000 Logins -->
-      <div class="plan-card business fade-in delay-3 popular">
-        <div class="plan-name">1.000 Logins</div>
-        <div class="plan-price">
-          <span class="currency">R$</span>
-          <span class="integer">140</span>
-          <span class="decimal">,00/mês</span>
-        </div>
-        <ul class="benefits-list">
-          <li>1.000 acessos simultâneos</li>
-          <li>Painel premium</li>
-          <li>Suporte dedicado</li>
-          <li>Melhor custo-benefício</li>
-        </ul>
-        <a href="https://wa.me/558481518164?text=Olá! Quero assinar 1.000 logins por R$140/mês" class="btn btn-business">Assinar Mensal</a>
-      </div>
-      
-      <!-- Plano 2.000 Logins -->
-      <div class="plan-card business fade-in">
-        <div class="plan-name">2.000 Logins</div>
-        <div class="plan-price">
-          <span class="currency">R$</span>
-          <span class="integer">180</span>
-          <span class="decimal">,00/mês</span>
-        </div>
-        <ul class="benefits-list">
-          <li>2.000 acessos simultâneos</li>
-          <li>Painel premium</li>
-          <li>Suporte dedicado</li>
-          <li>Conta master</li>
-        </ul>
-        <a href="https://wa.me/558481518164?text=Olá! Quero assinar 2.000 logins por R$180/mês" class="btn btn-business">Assinar Mensal</a>
-      </div>
-      
-      <!-- Plano 10.000 Logins -->
-      <div class="plan-card business fade-in delay-1">
-        <div class="plan-name">10.000 Logins</div>
-        <div class="plan-price">
-          <span class="currency">R$</span>
-          <span class="integer">240</span>
-          <span class="decimal">,00/mês</span>
-        </div>
-        <ul class="benefits-list">
-          <li>10.000 acessos simultâneos</li>
-          <li>Painel empresarial</li>
-          <li>Suporte 24/7</li>
-          <li>Conta master</li>
-        </ul>
-        <a href="https://wa.me/558481518164?text=Olá! Quero assinar 10.000 logins por R$240/mês" class="btn btn-business">Assinar Mensal</a>
-      </div>
-    </div>
   </div>
   
-  <!-- TAB CRÉDITOS -->
   <div id="credits" class="tab-content">
     <div class="plan-description">
       <p><i class="fas fa-coins"></i> <strong>Pague apenas quando quiser</strong> — sem mensalidade! Créditos não expiram.</p>
     </div>
-    
-    <div class="plans-grid">
-      <!-- Plano 10 Créditos -->
-      <div class="plan-card business fade-in">
-        <div class="plan-name">10 Créditos</div>
-        <div class="plan-price">
-          <span class="currency">R$</span>
-          <span class="integer">20</span>
-          <span class="decimal">,00</span>
-        </div>
-        <ul class="benefits-list">
-          <li>Sem mensalidade</li>
-          <li>Painel básico</li>
-          <li>Ativação imediata</li>
-        </ul>
-        <a href="https://wa.me/558481518164?text=Olá! Quero comprar 10 créditos por R$20" class="btn btn-business">Comprar Créditos</a>
+    <div id="plans-grid-revenda-creditos" class="plans-grid">
       </div>
-      
-      <!-- Plano 20 Créditos -->
-      <div class="plan-card business fade-in delay-1">
-        <div class="plan-name">20 Créditos</div>
-        <div class="plan-price">
-          <span class="currency">R$</span>
-          <span class="integer">30</span>
-          <span class="decimal">,00</span>
-        </div>
-        <ul class="benefits-list">
-          <li>Sem mensalidade</li>
-          <li>Painel básico</li>
-          <li>Economia de R$10</li>
-        </ul>
-        <a href="https://wa.me/558481518164?text=Olá! Quero comprar 20 créditos por R$30" class="btn btn-business">Comprar Créditos</a>
-      </div>
-      
-      <!-- Plano 50 Créditos -->
-      <div class="plan-card business fade-in delay-2">
-        <div class="plan-name">50 Créditos</div>
-        <div class="plan-price">
-          <span class="currency">R$</span>
-          <span class="integer">60</span>
-          <span class="decimal">,00</span>
-        </div>
-        <ul class="benefits-list">
-          <li>Sem mensalidade</li>
-          <li>Painel premium</li>
-          <li>Suporte prioritário</li>
-        </ul>
-        <a href="https://wa.me/558481518164?text=Olá! Quero comprar 50 créditos por R$60" class="btn btn-business">Comprar Créditos</a>
-      </div>
-      
-      <!-- Plano 100 Créditos -->
-      <div class="plan-card business fade-in delay-3 popular">
-        <div class="plan-name">100 Créditos</div>
-        <div class="plan-price">
-          <span class="currency">R$</span>
-          <span class="integer">120</span>
-          <span class="decimal">,00</span>
-        </div>
-        <ul class="benefits-list">
-          <li>Sem mensalidade</li>
-          <li>Painel premium</li>
-          <li>Melhor custo-benefício</li>
-        </ul>
-        <a href="https://wa.me/558481518164?text=Olá! Quero comprar 100 créditos por R$120" class="btn btn-business">Comprar Créditos</a>
-      </div>
-      
-      <!-- Plano 500 Créditos -->
-      <div class="plan-card business fade-in">
-        <div class="plan-name">500 Créditos</div>
-        <div class="plan-price">
-          <span class="currency">R$</span>
-          <span class="integer">250</span>
-          <span class="decimal">,00</span>
-        </div>
-        <ul class="benefits-list">
-          <li>Sem mensalidade</li>
-          <li>Painel premium</li>
-          <li>Suporte dedicado</li>
-        </ul>
-        <a href="https://wa.me/558481518164?text=Olá! Quero comprar 500 créditos por R$250" class="btn btn-business">Comprar Créditos</a>
-      </div>
-      
-      <!-- Plano 1.000 Créditos -->
-      <div class="plan-card business fade-in delay-1">
-        <div class="plan-name">1.000 Créditos</div>
-        <div class="plan-price">
-          <span class="currency">R$</span>
-          <span class="integer">300</span>
-          <span class="decimal">,00</span>
-        </div>
-        <ul class="benefits-list">
-          <li>Sem mensalidade</li>
-          <li>Painel empresarial</li>
-          <li>Suporte 24/7</li>
-        </ul>
-        <a href="https://wa.me/558481518164?text=Olá! Quero comprar 1.000 créditos por R$300" class="btn btn-business">Comprar Créditos</a>
-      </div>
-      
-      <!-- Plano 10.000 Créditos -->
-      <div class="plan-card business fade-in delay-2">
-        <div class="plan-name">10.000 Créditos</div>
-        <div class="plan-price">
-          <span class="currency">R$</span>
-          <span class="integer">600</span>
-          <span class="decimal">,00</span>
-        </div>
-        <ul class="benefits-list">
-          <li>Sem mensalidade</li>
-          <li>Painel empresarial</li>
-          <li>Conta master</li>
-          <li>Melhor oferta</li>
-        </ul>
-        <a href="https://wa.me/558481518164?text=Olá! Quero comprar 10.000 créditos por R$300" class="btn btn-business">Comprar Créditos</a>
-      </div>
-    </div>
   </div>
   
   <div class="business-benefits">
@@ -1153,13 +864,11 @@
       <h4>Lucro Garantido</h4>
       <p>Margens de até 300% na revenda dos créditos/logins</p>
     </div>
-    
     <div class="business-benefit">
       <i class="fas fa-rocket"></i>
       <h4>Crescimento Rápido</h4>
       <p>Escalone seu negócio conforme sua demanda</p>
     </div>
-    
     <div class="business-benefit">
       <i class="fas fa-shield-alt"></i>
       <h4>Estabilidade</h4>
@@ -1169,33 +878,25 @@
   
   <div class="test-offer">
     <p class="note"><i class="fas fa-gift"></i> <strong>TESTE GRÁTIS DISPONÍVEL</strong> - Experimente antes de comprar!</p>
-    <a href="https://wa.me/558481518164?text=Olá! Quero testar o serviço antes de assinar" class="btn btn-outline">Solicitar Teste</a>
+    <a id="whatsapp-link-teste" href="" class="btn btn-outline">Solicitar Teste</a>
   </div>
 </div>
 
-      <!-- Programa de Indicação -->
       <div class="referral-program fade-in">
         <h2>📢 Programa de Indicação Troço Net</h2>
         <p class="tagline">Indique e GANHE! 😍</p>
-        
         <div class="referral-benefits">
           <div class="benefit-card">
-            <div class="benefit-icon" style="background-color: #28a745;">
-              <i class="fas fa-money-bill-wave"></i>
-            </div>
+            <div class="benefit-icon" style="background-color: #28a745;"><i class="fas fa-money-bill-wave"></i></div>
             <h3>R$5 no PIX</h3>
             <p>Por cada ativação</p>
           </div>
-          
           <div class="benefit-card">
-            <div class="benefit-icon" style="background-color: var(--primary);">
-              <i class="fas fa-gift"></i>
-            </div>
+            <div class="benefit-icon" style="background-color: var(--primary);"><i class="fas fa-gift"></i></div>
             <h3>1 Mês Grátis</h3>
             <p>De internet ilimitada</p>
           </div>
         </div>
-        
         <div class="how-it-works-referral">
           <h3>🗣️ Como funciona?</h3>
           <ol>
@@ -1203,12 +904,10 @@
             <li>Seu amigo menciona seu nome ao assinar</li>
             <li>Você escolhe seu prêmio: R$5 ou 1 mês grátis</li>
           </ol>
-          
           <p class="highlight-text">🔁 Indique quantas quiser. Sem limites! 🚀</p>
           <p class="highlight-text">Mais indicações = mais benefícios pra você! 🔥</p>
         </div>
-        
-        <a href="https://wa.me/558481518164?text=Olá! Quero participar do Programa de Indicação da Troço Net." class="btn btn-whatsapp" style="margin-top: 20px;">
+        <a id="whatsapp-link-indicacao" href="" class="btn btn-whatsapp" style="margin-top: 20px;">
           <i class="fab fa-whatsapp"></i> Quero Participar
         </a>
       </div>
@@ -1217,35 +916,23 @@
       
       <div class="how-it-works fade-in">
         <div class="steps">
-          <div class="step">
-            <div class="step-number">1</div>
-            <p>Escolha seu plano preferido</p>
-          </div>
-          <div class="step">
-            <div class="step-number">2</div>
-            <p>Faça o pagamento via PIX</p>
-          </div>
-          <div class="step">
-            <div class="step-number">3</div>
-            <p>Envie o comprovante</p>
-          </div>
-          <div class="step">
-            <div class="step-number">4</div>
-            <p>Receba as configurações</p>
-          </div>
+          <div class="step"><div class="step-number">1</div><p>Escolha seu plano preferido</p></div>
+          <div class="step"><div class="step-number">2</div><p>Faça o pagamento via PIX</p></div>
+          <div class="step"><div class="step-number">3</div><p>Envie o comprovante</p></div>
+          <div class="step"><div class="step-number">4</div><p>Receba as configurações</p></div>
         </div>
       </div>
       
       <div class="pix-box fade-in">
         <h3>Pagamento via PIX</h3>
         <p>Chave PIX:</p>
-        <div class="pix-key">71181961-2356-4ba8-aeec-1997b5ff2f0d</div>
-        <p class="note"><i class="fas fa-info-circle"></i> Envie o comprovante para: <strong>(84) 8151-8164</strong></p>
+        <div id="pix-key" class="pix-key"></div>
+        <p class="note"><i class="fas fa-info-circle"></i> Envie o comprovante para: <strong id="pix-contact"></strong></p>
       </div>
       
       <h2 class="fade-in">Experimente Grátis</h2>
       <p class="fade-in" style="max-width: 600px; margin: 0 auto 30px;">Oferecemos <strong class="highlight">1 hora de internet ilimitada gratuita</strong> para você testar nossa qualidade antes de assinar qualquer plano!</p>
-      <a href="https://wa.me/558481518164?text=Olá! Quero fazer o teste grátis de 1 hora da Troço Net." class="btn btn-outline fade-in">Pedir Teste Grátis</a>
+      <a id="whatsapp-link-teste-gratis" href="" class="btn btn-outline fade-in">Pedir Teste Grátis</a>
       
       <div class="working-hours fade-in">
         <h3>Horário de Atendimento</h3>
@@ -1255,7 +942,6 @@
             <div><i class="fas fa-clock"></i> 05h às 06h30</div>
             <div><i class="fas fa-clock"></i> 18h às 21h</div>
           </div>
-          
           <div class="hours-group">
             <strong><i class="fas fa-calendar-weekend"></i> Sábado e Domingo</strong>
             <div><i class="fas fa-clock"></i> 08h às 21h</div>
@@ -1265,50 +951,19 @@
 
       <div class="contact-section fade-in">
         <h3>Precisa de ajuda? Fale com nosso suporte</h3>
-        
         <div class="contact-buttons">
-          <a href="https://wa.me/558481518164" class="btn btn-whatsapp">
-            <div class="btn-icon">
-              <i class="fab fa-whatsapp"></i>
-            </div>
-            <div class="btn-content">
-              <span class="btn-label">Suporte via</span>
-              <span class="btn-platform">WhatsApp</span>
-            </div>
-          </a>
-          
-          <a href="https://t.me/suporte_trocodigital" class="btn btn-telegram">
-            <div class="btn-icon">
-              <i class="fab fa-telegram"></i>
-            </div>
-            <div class="btn-content">
-              <span class="btn-label">Suporte via</span>
-              <span class="btn-platform">Telegram</span>
-            </div>
-          </a>
+          <a id="whatsapp-link-suporte" href="" class="btn btn-whatsapp"><i class="fab fa-whatsapp"></i> Suporte via WhatsApp</a>
+          <a id="telegram-link-suporte" href="" class="btn btn-telegram"><i class="fab fa-telegram"></i> Suporte via Telegram</a>
         </div>
-        
-        <p class="contact-note">
-          <i class="fas fa-headset"></i> Atendimento rápido e personalizado
-        </p>
+        <p class="contact-note"><i class="fas fa-headset"></i> Atendimento rápido e personalizado</p>
       </div>
       
       <div class="social-links fade-in">
-        <a href="https://www.instagram.com/trocodigital" target="_blank" title="Instagram">
-          <i class="fab fa-instagram"></i>
-        </a>
-        <a href="https://www.facebook.com/trocodigital" target="_blank" title="Facebook">
-          <i class="fab fa-facebook-f"></i>
-        </a>
-        <a href="https://t.me/trocodigital" target="_blank" title="Telegram">
-          <i class="fab fa-telegram"></i>
-        </a>
-        <a href="https://www.tiktok.com/@trocodigital" target="_blank" title="TikTok">
-          <i class="fab fa-tiktok"></i>
-        </a>
-        <a href="https://k.kwai.com/u/@trocodigitaloficial" target="_blank" title="Kwai">
-          <i class="fas fa-play"></i>
-        </a>
+        <a href="https://www.instagram.com/trocodigital" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.facebook.com/trocodigital" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://t.me/trocodigital" target="_blank" title="Telegram"><i class="fab fa-telegram"></i></a>
+        <a href="https://www.tiktok.com/@trocodigital" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
+        <a href="https://k.kwai.com/u/@trocodigitaloficial" target="_blank" title="Kwai"><i class="fas fa-play"></i></a>
       </div>
     </div>
     
@@ -1320,42 +975,105 @@
   </div>
   
   <script>
-    // Animação de scroll
-    document.addEventListener('DOMContentLoaded', function() {
-      const fadeElements = document.querySelectorAll('.fade-in');
-      
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.style.opacity = 1;
-            entry.target.style.transform = 'translateY(0)';
-          }
-        });
-      }, { threshold: 0.1 });
-      
-      fadeElements.forEach(el => {
-        el.style.opacity = 0;
-        el.style.transform = 'translateY(20px)';
-        el.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
-        observer.observe(el);
-      });
-    });
-    
     // Função para as abas de revenda
     function openTab(evt, tabName) {
       const tabContents = document.getElementsByClassName("tab-content");
       for (let i = 0; i < tabContents.length; i++) {
         tabContents[i].style.display = "none";
       }
-      
       const tabButtons = document.getElementsByClassName("tab-btn");
       for (let i = 0; i < tabButtons.length; i++) {
         tabButtons[i].className = tabButtons[i].className.replace(" active", "");
       }
-      
       document.getElementById(tabName).style.display = "block";
       evt.currentTarget.className += " active";
     }
+
+    // --- SCRIPT PARA CARREGAR DADOS DINÂMICOS ---
+    async function carregarConteudo() {
+      try {
+        const response = await fetch('/_data/settings.json?v=' + new Date().getTime());
+        if (!response.ok) throw new Error(`Erro de rede: ${response.statusText}`);
+        const data = await response.json();
+
+        // --- Atualiza Textos e Links Gerais ---
+        document.getElementById('hero-title').textContent = data.hero_title;
+        document.getElementById('hero-tagline').textContent = data.hero_tagline;
+        document.getElementById('pix-key').textContent = data.pix_key;
+        document.getElementById('pix-contact').textContent = data.whatsapp_number;
+        document.getElementById('whatsapp-link-teste').href = `${data.whatsapp_link}?text=Olá! Quero testar o serviço antes de assinar`;
+        document.getElementById('whatsapp-link-indicacao').href = `${data.whatsapp_link}?text=Olá! Quero participar do Programa de Indicação da Troço Net.`;
+        document.getElementById('whatsapp-link-teste-gratis').href = `${data.whatsapp_link}?text=Olá! Quero fazer o teste grátis de 1 hora da Troço Net.`;
+        document.getElementById('whatsapp-link-suporte').href = data.whatsapp_link;
+        document.getElementById('telegram-link-suporte').href = data.telegram_link;
+
+        // --- Gera os Cartões de Planos Pessoais ---
+        const plansGridPessoal = document.getElementById('plans-grid-pessoal');
+        plansGridPessoal.innerHTML = '';
+        data.planos_pessoais.forEach(plano => {
+          const popularClass = plano.popular ? 'popular' : '';
+          const precoPartes = parseFloat(plano.preco).toFixed(2).split('.');
+          const cardHTML = `
+            <div class="plan-card fade-in ${popularClass}">
+              <div class="plan-name">${plano.nome}</div>
+              <div class="plan-price">
+                <span class="currency">R$</span>
+                <span class="integer">${precoPartes[0]}</span>
+                <span class="decimal">,${precoPartes[1]}</span>
+              </div>
+              <div class="plan-duration">${plano.duracao}</div>
+              <ul class="benefits-list">
+                <li>Velocidade 4G/5G</li><li>Uso ilimitado</li><li>Compatível com Vivo, Tim e Claro</li><li>Suporte especializado</li><li>Configuração fácil</li>
+              </ul>
+              <a href="${data.whatsapp_link}?text=Olá! Quero assinar o Plano ${plano.nome} de R$${plano.preco.toFixed(2)}" class="btn">Assinar Agora</a>
+            </div>`;
+          plansGridPessoal.innerHTML += cardHTML;
+        });
+
+        // --- Gera os Cartões de Revenda Mensal ---
+        const plansGridMensal = document.getElementById('plans-grid-revenda-mensal');
+        plansGridMensal.innerHTML = '';
+        data.planos_revenda_mensal.forEach(plano => {
+          const beneficiosHTML = plano.beneficios.split(';').map(b => `<li>${b}</li>`).join('');
+          const cardHTML = `
+            <div class="plan-card business fade-in">
+              <div class="plan-name">${plano.nome}</div>
+              <div class="plan-price">
+                <span class="currency">R$</span>
+                <span class="integer">${parseInt(plano.preco)}</span>
+                <span class="decimal">,00/mês</span>
+              </div>
+              <ul class="benefits-list">${beneficiosHTML}</ul>
+              <a href="${data.whatsapp_link}?text=Olá! Quero assinar o plano de revenda de ${plano.nome} por R$${plano.preco}/mês" class="btn btn-business">Assinar Mensal</a>
+            </div>`;
+          plansGridMensal.innerHTML += cardHTML;
+        });
+
+        // --- Gera os Cartões de Revenda por Créditos ---
+        const plansGridCreditos = document.getElementById('plans-grid-revenda-creditos');
+        plansGridCreditos.innerHTML = '';
+        data.planos_revenda_creditos.forEach(plano => {
+          const beneficiosHTML = plano.beneficios.split(';').map(b => `<li>${b}</li>`).join('');
+          const cardHTML = `
+            <div class="plan-card business fade-in">
+              <div class="plan-name">${plano.nome}</div>
+              <div class="plan-price">
+                <span class="currency">R$</span>
+                <span class="integer">${parseInt(plano.preco)}</span>
+                <span class="decimal">,00</span>
+              </div>
+              <ul class="benefits-list">${beneficiosHTML}</ul>
+              <a href="${data.whatsapp_link}?text=Olá! Quero comprar ${plano.nome} por R$${plano.preco}" class="btn btn-business">Comprar Créditos</a>
+            </div>`;
+          plansGridCreditos.innerHTML += cardHTML;
+        });
+
+      } catch (error) {
+        console.error("Não foi possível carregar o conteúdo dinâmico:", error);
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', carregarConteudo);
   </script>
 </body>
 </html>

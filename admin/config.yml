@@ -2,24 +2,20 @@ backend:
   name: git-gateway
   branch: main
 
-# Adicione o URL do seu site aqui
 site_url: https://troconet.shop
 
 media_folder: "images/uploads"
 public_folder: "/images/uploads"
 
-# --- ESTRUTURA CORRIGIDA ---
-# Em vez de uma "collection" genérica, usamos uma coleção do tipo "files"
-# que é a correta para editar um único ficheiro.
 collections:
-  - name: "configuracoes" # Nome interno
-    label: "Configurações do Site" # O que aparece no painel
+  - name: "configuracoes"
+    label: "Configurações do Site"
     description: "Edite aqui todos os textos, preços e links do site."
-    files: # Usamos "files" para especificar um ou mais ficheiros
-      - name: "geral" # Nome interno do ficheiro
-        label: "Opções Gerais" # Nome que aparece no painel
-        file: "_data/settings.json" # Caminho para o ficheiro de dados
-        fields: # Os campos editáveis continuam os mesmos
+    files:
+      - name: "geral"
+        label: "Opções Gerais"
+        file: "_data/settings.json"
+        fields:
           - { label: "Título Principal", name: "hero_title", widget: "string" }
           - { label: "Slogan abaixo do Título", name: "hero_tagline", widget: "string" }
           - { label: "Link de Contacto WhatsApp", name: "whatsapp_link", widget: "string" }

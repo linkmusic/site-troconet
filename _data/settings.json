@@ -1,10 +1,11 @@
 {
-  "hero_title": "Troço Net",
-  "hero_tagline": "Internet ilimitada 4G/5G para Android",
-  "whatsapp_link": "https://wa.me/558481518164",
-  "whatsapp_number": "(84) 8151-8164",
-  "telegram_link": "https://t.me/suporte_trocodigital",
-  "pix_key": "71181961-2356-4ba8-aeec-1997b5ff2f0d",
+  "intro_text": "Navegue sem limites com nossos planos de internet ilimitada compatíveis com as principais operadoras do Brasil. Rápido, estável e sem bloqueios!",
+  "referral_program": {
+    "title": "Programa de Indicação Troço Net",
+    "tagline": "Indique e GANHE! 😍",
+    "how_it_works_text": "Como funciona?",
+    "steps": "Indique amigos para a Troço Net; Seu amigo menciona seu nome ao assinar; Você escolhe sua recompensa: R\\$5 de bônus ou 1 mês grátis."
+  },
   "planos_pessoais": [
     {
       "nome": "Mensal",
@@ -16,54 +17,80 @@
       "nome": "Trimestral",
       "preco": 15,
       "duracao": "90 dias de internet ilimitada",
-      "popular": true
+      "popular": false
+    },
+    {
+      "popular": false,
+      "nome": "Semestral",
+      "preco": 19,
+      "duracao": "180 dias de internet ilimitada"
+    },
+    {
+      "popular": true,
+      "nome": "Anual",
+      "preco": 25,
+      "duracao": "365 dias de internet ilimitada"
     }
   ],
-  "planos_revenda_mensal": [
+  "how_it_works_steps": [
     {
-      "nome": "100 Logins",
-      "preco": 60,
-      "beneficios": "100 acessos simultâneos;Painel básico;Suporte padrão"
+      "text": "Escolha seu plano preferido"
     },
     {
-      "nome": "200 Logins",
-      "preco": 70,
-      "beneficios": "200 acessos simultâneos;Painel básico;Suporte prioritário"
+      "text": "Faça o pagamento via PIX ou Teste Grátis"
     },
     {
-      "nome": "300 Logins",
-      "preco": 120,
-      "beneficios": "300 acessos simultâneos;Painel premium;Suporte prioritário"
+      "text": "Envie o comprovante"
     },
     {
-      "nome": "1.000 Logins",
-      "preco": 140,
-      "beneficios": "1.000 acessos simultâneos;Painel premium;Suporte dedicado;Melhor custo-benefício"
-    },
-    {
-      "nome": "2.000 Logins",
-      "preco": 180,
-      "beneficios": "2.000 acessos simultâneos;Painel premium;Suporte dedicado;Conta master"
-    },
-    {
-      "nome": "10.000 Logins",
-      "preco": 240,
-      "beneficios": "10.000 acessos simultâneos;Painel empresarial;Suporte 24/7;Conta master"
+      "text": "Receba as configurações"
     }
   ],
-  "business_benefits": [
+  "planos_revenda_creditos": [
     {
-      "icon": "fas fa-percentage",
-      "title": "Lucro Garantido",
-      "description": "Margens de até 300% na revenda dos créditos/logins"
+      "nome": "10 Créditos",
+      "preco": 20,
+      "beneficios": "Sem mensalidade; Painel básico; Ativação imediata."
     },
     {
       "nome": "20 Créditos",
       "preco": 30,
-      "beneficios": "Sem mensalidade;Painel básico;Economia de R$10"
+      "beneficios": "Sem mensalidade; Painel básico; Economia de R$10."
+    },
+    {
+      "nome": "50 Créditos",
+      "preco": 60,
+      "beneficios": "Sem mensalidade; Painel premium; Suporte prioritário."
+    },
+    {
+      "nome": "100 Créditos",
+      "preco": 120,
+      "beneficios": "Sem mensalidade; Painel premium; Melhor custo-benefício."
+    },
+    {
+      "nome": "500 Créditos",
+      "preco": 250,
+      "beneficios": "Sem mensalidade; Painel premium; Suporte dedicado."
+    },
+    {
+      "nome": "1.000 Créditos",
+      "preco": 300,
+      "beneficios": "Sem mensalidade; Painel empresarial; Suporte 24/7."
+    },
+    {
+      "nome": "10.000 Créditos",
+      "preco": 600,
+      "beneficios": "Sem mensalidade; Painel empresarial; Conta master; Melhor oferta."
     }
   ],
   "whatsapp_link": "https://wa.me/558481518164",
+  "redes_sociais": [
+    {
+      "nome": "Instagram",
+      "url": "https://www.instagram.com/trocodigital?igsh=bDR3cTkwcHhmYzg4",
+      "icone": "fab fa-instagram"
+    }
+  ],
   "hero_tagline": "Internet ilimitada 4G/5G para Android",
   "planos_revenda_mensal": [
     {
@@ -97,8 +124,48 @@
       "beneficios": "10.000 acessos simultâneos;Painel empresarial;Suporte 24/7;Conta master"
     }
   ],
+  "horario_atendimento": [
+    {
+      "titulo": "Segunda a Domingo",
+      "icone": "fas fa-calendar-day",
+      "horarios": [
+        "08h às 21h"
+      ]
+    }
+  ],
   "hero_title": "Troço Net",
+  "cores": {
+    "primaria": "#ff2d8e",
+    "primaria_escura": "#000000",
+    "secundaria": "#ffe6f1"
+  },
   "whatsapp_number": "(84) 8151-8164",
   "telegram_link": "https://t.me/suporte_trocodigital",
+  "links": {
+    "whatsapp": "https://wa.me/558481518164",
+    "whatsapp_number": "558481518164",
+    "telegram": "https://t.me/suporte_trocodigital",
+    "pix_key": "trocodigitalpagamentos@gmail.com"
+  },
+  "business_benefits": [
+    {
+      "icon": "fas fa-percentage",
+      "title": "Lucro Garantido",
+      "description": "Margens de até 300% na revenda dos créditos/logins"
+    },
+    {
+      "nome": "20 Créditos",
+      "preco": 30,
+      "beneficios": "Sem mensalidade;Painel básico;Economia de R$10",
+      "icon": "fas fa-rocket",
+      "description": "Escalone seu negócio conforme sua demanda",
+      "title": "Crescimento Rápido"
+    },
+    {
+      "title": "Estabilidade",
+      "description": "Servidores 99.9% online com suporte técnico especializado",
+      "icon": "fas fa-shield-alt"
+    }
+  ],
   "pix_key": "troconetpagamentos@gmail.com"
 }

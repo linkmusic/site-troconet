@@ -998,6 +998,13 @@
         if (!response.ok) throw new Error(`Erro de rede: ${response.statusText}`);
         const data = await response.json();
 
+        // --- Atualiza as Cores do Site ---
+        if (data.cores) {
+          document.documentElement.style.setProperty('--primary', data.cores.primaria);
+          document.documentElement.style.setProperty('--primary-dark', data.cores.primaria_escura);
+          document.documentElement.style.setProperty('--secondary', data.cores.secundaria);
+        }
+
         // --- Atualiza Textos e Links Gerais ---
         document.getElementById('hero-title').textContent = data.hero_title;
         document.getElementById('hero-tagline').textContent = data.hero_tagline;

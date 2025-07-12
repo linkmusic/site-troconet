@@ -22,6 +22,15 @@ collections:
           - { label: "Número de Telefone (para texto)", name: "whatsapp_number", widget: "string" }
           - { label: "Link de Suporte Telegram", name: "telegram_link", widget: "string" }
           - { label: "Chave PIX", name: "pix_key", widget: "string" }
+          # --- NOVA SEÇÃO DE CORES ADICIONADA ABAIXO ---
+          - label: "Cores do Site"
+            name: "cores"
+            widget: "object"
+            fields:
+              - { label: "Cor Principal (Rosa Vibrante)", name: "primaria", widget: "color" }
+              - { label: "Cor Principal Escura (para hover)", name: "primaria_escura", widget: "color" }
+              - { label: "Cor Secundária (Rosa Claro)", name: "secundaria", widget: "color" }
+          # --- FIM DA NOVA SEÇÃO ---
           - label: "Planos Pessoais"
             name: "planos_pessoais"
             widget: "list"

@@ -34,6 +34,23 @@ collections:
               - { label: "Número de Telefone (para texto)", name: "whatsapp_number", widget: "string" }
               - { label: "Link de Suporte Telegram", name: "telegram", widget: "string" }
               - { label: "Chave PIX", name: "pix_key", widget: "string" }
+          - label: "Horário de Atendimento"
+            name: "horario_atendimento"
+            widget: "list"
+            fields:
+              - { label: "Título (ex: Segunda a Sexta)", name: "titulo", widget: "string" }
+              - { label: "Ícone do Título (ex: fas fa-calendar-day)", name: "icone", widget: "string" }
+              - label: "Horários"
+                name: "horarios"
+                widget: "list"
+                field: { label: "Horário (ex: 08h às 21h)", name: "horario", widget: "string" }
+          - label: "Redes Sociais"
+            name: "redes_sociais"
+            widget: "list"
+            fields:
+              - { label: "Nome da Rede (ex: Instagram)", name: "nome", widget: "string" }
+              - { label: "Link Completo (URL)", name: "url", widget: "string" }
+              - { label: "Ícone (ex: fab fa-instagram)", name: "icone", widget: "string" }
           - label: "Benefícios do Painel de Revenda"
             name: "business_benefits"
             widget: "list"
@@ -54,15 +71,6 @@ collections:
               - { label: "Slogan", name: "tagline", widget: "string" }
               - { label: "Texto de 'Como Funciona'", name: "how_it_works_text", widget: "string" }
               - { label: "Passos (separados por ';')", name: "steps", widget: "string" }
-          - label: "Links das Redes Sociais"
-            name: "social_links"
-            widget: "object"
-            fields:
-              - { label: "Instagram", name: "instagram", widget: "string" }
-              - { label: "Facebook", name: "facebook", widget: "string" }
-              - { label: "Telegram", name: "telegram", widget: "string" }
-              - { label: "TikTok", name: "tiktok", widget: "string" }
-              - { label: "Kwai", name: "kwai", widget: "string" }
           - label: "Planos Pessoais"
             name: "planos_pessoais"
             widget: "list"

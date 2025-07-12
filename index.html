@@ -204,13 +204,8 @@
       <p class="fade-in" style="max-width: 600px; margin: 0 auto 30px;">Oferecemos <strong class="highlight">1 hora de internet ilimitada gratuita</strong> para você testar nossa qualidade antes de assinar qualquer plano!</p>
       <a id="whatsapp-link-teste-gratis" href="" class="btn btn-outline fade-in">Pedir Teste Grátis</a>
       
-      <div class="working-hours fade-in">
-        <h3>Horário de Atendimento</h3>
-        <div class="hours-grid">
-          <div class="hours-group"><strong><i class="fas fa-calendar-day"></i> Segunda a Sexta</strong><div><i class="fas fa-clock"></i> 05h às 06h30</div><div><i class="fas fa-clock"></i> 18h às 21h</div></div>
-          <div class="hours-group"><strong><i class="fas fa-calendar-weekend"></i> Sábado e Domingo</strong><div><i class="fas fa-clock"></i> 08h às 21h</div></div>
+      <div id="working-hours-container" class="working-hours fade-in">
         </div>
-      </div>
 
       <div class="contact-section fade-in">
         <h3>Precisa de ajuda? Fale com nosso suporte</h3>
@@ -221,7 +216,8 @@
         <p class="contact-note"><i class="fas fa-headset"></i> Atendimento rápido e personalizado</p>
       </div>
       
-      <div id="social-links-container" class="social-links fade-in"></div>
+      <div id="social-links-container" class="social-links fade-in">
+        </div>
     </div>
     
     <footer>
@@ -278,15 +274,13 @@
           plansGridPessoal.innerHTML += `<div class="plan-card fade-in ${popularClass}"><div class="plan-name">${plano.nome}</div><div class="plan-price"><span class="currency">R$</span><span class="integer">${precoPartes[0]}</span><span class="decimal">,${precoPartes[1]}</span></div><div class="plan-duration">${plano.duracao}</div><ul class="benefits-list"><li>Velocidade 4G/5G</li><li>Uso ilimitado</li><li>Compatível com Vivo, Tim e Claro</li><li>Suporte especializado</li><li>Configuração fácil</li></ul><a href="${whatsappBaseLink}?text=Olá! Quero assinar o Plano ${plano.nome} de R$${plano.preco.toFixed(2)}" class="btn">Assinar Agora</a></div>`;
         });
 
-        // --- Gera Planos de Revenda Mensal ---
+        // --- Gera Planos de Revenda ---
         const plansGridMensal = document.getElementById('plans-grid-revenda-mensal');
         plansGridMensal.innerHTML = '';
         data.planos_revenda_mensal.forEach(plano => {
           const beneficiosHTML = plano.beneficios.split(';').map(b => `<li>${b}</li>`).join('');
           plansGridMensal.innerHTML += `<div class="plan-card business fade-in"><div class="plan-name">${plano.nome}</div><div class="plan-price"><span class="currency">R$</span><span class="integer">${parseInt(plano.preco)}</span><span class="decimal">,00/mês</span></div><ul class="benefits-list">${beneficiosHTML}</ul><a href="${whatsappBaseLink}?text=Olá! Quero assinar o plano de revenda de ${plano.nome} por R$${plano.preco}/mês" class="btn btn-business">Assinar Mensal</a></div>`;
         });
-
-        // --- Gera Planos de Revenda por Créditos ---
         const plansGridCreditos = document.getElementById('plans-grid-revenda-creditos');
         plansGridCreditos.innerHTML = '';
         data.planos_revenda_creditos.forEach(plano => {
@@ -294,21 +288,17 @@
           plansGridCreditos.innerHTML += `<div class="plan-card business fade-in"><div class="plan-name">${plano.nome}</div><div class="plan-price"><span class="currency">R$</span><span class="integer">${parseInt(plano.preco)}</span><span class="decimal">,00</span></div><ul class="benefits-list">${beneficiosHTML}</ul><a href="${whatsappBaseLink}?text=Olá! Quero comprar ${plano.nome} por R$${plano.preco}" class="btn btn-business">Comprar Créditos</a></div>`;
         });
         
-        // --- Gera Benefícios da Revenda ---
+        // --- Gera Conteúdo Dinâmico Adicional ---
         const businessBenefitsContainer = document.getElementById('business-benefits-container');
         businessBenefitsContainer.innerHTML = '';
         data.business_benefits.forEach(benefit => {
             businessBenefitsContainer.innerHTML += `<div class="business-benefit"><i class="${benefit.icon}"></i><h4>${benefit.title}</h4><p>${benefit.description}</p></div>`;
         });
-
-        // --- Gera Passos de Como Funciona ---
         const howItWorksContainer = document.getElementById('how-it-works-container');
         howItWorksContainer.innerHTML = '';
         data.how_it_works_steps.forEach((step, index) => {
             howItWorksContainer.innerHTML += `<div class="step"><div class="step-number">${index + 1}</div><p>${step.text}</p></div>`;
         });
-
-        // --- Gera Programa de Indicação ---
         document.getElementById('referral-title').textContent = data.referral_program.title;
         document.getElementById('referral-tagline').textContent = data.referral_program.tagline;
         document.getElementById('referral-howitworks-title').textContent = data.referral_program.how_it_works_text;
@@ -318,15 +308,25 @@
             referralStepsContainer.innerHTML += `<li>${step}</li>`;
         });
 
+        // --- Gera Horário de Atendimento ---
+        const workingHoursContainer = document.getElementById('working-hours-container');
+        if (data.horario_atendimento) {
+            workingHoursContainer.innerHTML = '<h3>Horário de Atendimento</h3><div class="hours-grid"></div>';
+            const hoursGrid = workingHoursContainer.querySelector('.hours-grid');
+            data.horario_atendimento.forEach(group => {
+                const horariosHTML = group.horarios.map(h => `<div><i class="fas fa-clock"></i> ${h.horario}</div>`).join('');
+                hoursGrid.innerHTML += `<div class="hours-group"><strong><i class="${group.icone}"></i> ${group.titulo}</strong>${horariosHTML}</div>`;
+            });
+        }
+        
         // --- Gera Links de Redes Sociais ---
         const socialContainer = document.getElementById('social-links-container');
-        socialContainer.innerHTML = `
-            <a href="${data.social_links.instagram}" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="${data.social_links.facebook}" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-            <a href="${data.social_links.telegram}" target="_blank" title="Telegram"><i class="fab fa-telegram"></i></a>
-            <a href="${data.social_links.tiktok}" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
-            <a href="${data.social_links.kwai}" target="_blank" title="Kwai"><i class="fas fa-play"></i></a>
-        `;
+        socialContainer.innerHTML = '';
+        if (data.redes_sociais) {
+            data.redes_sociais.forEach(link => {
+                socialContainer.innerHTML += `<a href="${link.url}" target="_blank" title="${link.nome}"><i class="${link.icone}"></i></a>`;
+            });
+        }
 
       } catch (error) {
         console.error("Não foi possível carregar o conteúdo dinâmico:", error);

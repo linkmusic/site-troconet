@@ -13,24 +13,56 @@ collections:
     description: "Edite aqui todos os textos, preços e links do site."
     files:
       - name: "geral"
-        label: "Opções Gerais"
+        label: "Opções Gerais e Textos"
         file: "_data/settings.json"
         fields:
           - { label: "Título Principal", name: "hero_title", widget: "string" }
           - { label: "Slogan abaixo do Título", name: "hero_tagline", widget: "string" }
-          - { label: "Link de Contacto WhatsApp", name: "whatsapp_link", widget: "string" }
-          - { label: "Número de Telefone (para texto)", name: "whatsapp_number", widget: "string" }
-          - { label: "Link de Suporte Telegram", name: "telegram_link", widget: "string" }
-          - { label: "Chave PIX", name: "pix_key", widget: "string" }
-          # --- NOVA SEÇÃO DE CORES ADICIONADA ABAIXO ---
+          - { label: "Texto de Introdução", name: "intro_text", widget: "text" }
           - label: "Cores do Site"
             name: "cores"
             widget: "object"
             fields:
-              - { label: "Cor Principal (Rosa Vibrante)", name: "primaria", widget: "color" }
+              - { label: "Cor Principal", name: "primaria", widget: "color" }
               - { label: "Cor Principal Escura (para hover)", name: "primaria_escura", widget: "color" }
               - { label: "Cor Secundária (Rosa Claro)", name: "secundaria", widget: "color" }
-          # --- FIM DA NOVA SEÇÃO ---
+          - label: "Links Gerais"
+            name: "links"
+            widget: "object"
+            fields:
+              - { label: "Link de Contacto WhatsApp", name: "whatsapp", widget: "string" }
+              - { label: "Número de Telefone (para texto)", name: "whatsapp_number", widget: "string" }
+              - { label: "Link de Suporte Telegram", name: "telegram", widget: "string" }
+              - { label: "Chave PIX", name: "pix_key", widget: "string" }
+          - label: "Benefícios do Painel de Revenda"
+            name: "business_benefits"
+            widget: "list"
+            fields:
+              - { label: "Ícone (ex: fas fa-percentage)", name: "icon", widget: "string" }
+              - { label: "Título", name: "title", widget: "string" }
+              - { label: "Descrição", name: "description", widget: "string" }
+          - label: "Passos de Como Funciona"
+            name: "how_it_works_steps"
+            widget: "list"
+            fields:
+              - { label: "Texto do Passo", name: "text", widget: "string" }
+          - label: "Programa de Indicação"
+            name: "referral_program"
+            widget: "object"
+            fields:
+              - { label: "Título", name: "title", widget: "string" }
+              - { label: "Slogan", name: "tagline", widget: "string" }
+              - { label: "Texto de 'Como Funciona'", name: "how_it_works_text", widget: "string" }
+              - { label: "Passos (separados por ';')", name: "steps", widget: "string" }
+          - label: "Links das Redes Sociais"
+            name: "social_links"
+            widget: "object"
+            fields:
+              - { label: "Instagram", name: "instagram", widget: "string" }
+              - { label: "Facebook", name: "facebook", widget: "string" }
+              - { label: "Telegram", name: "telegram", widget: "string" }
+              - { label: "TikTok", name: "tiktok", widget: "string" }
+              - { label: "Kwai", name: "kwai", widget: "string" }
           - label: "Planos Pessoais"
             name: "planos_pessoais"
             widget: "list"
@@ -45,11 +77,11 @@ collections:
             fields:
               - { label: "Nome", name: "nome", widget: "string" }
               - { label: "Preço (ex: 60.00)", name: "preco", widget: "number" }
-              - { label: "Benefícios (separados por ponto e vírgula ';')", name: "beneficios", widget: "string" }
+              - { label: "Benefícios (separados por ';')", name: "beneficios", widget: "string" }
           - label: "Planos de Revenda (Créditos)"
             name: "planos_revenda_creditos"
             widget: "list"
             fields:
               - { label: "Nome", name: "nome", widget: "string" }
               - { label: "Preço (ex: 20.00)", name: "preco", widget: "number" }
-              - { label: "Benefícios (separados por ponto e vírgula ';')", name: "beneficios", widget: "string" }
+              - { label: "Benefícios (separados por ';')", name: "beneficios", widget: "string" }

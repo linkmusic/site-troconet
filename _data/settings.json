@@ -1,7 +1,9 @@
 {
+  "hero_title": "Troço Net",
+  "hero_tagline": "Internet ilimitada 4G/5G para Android",
   "intro_text": "Navegue <strong class=\"highlight\">sem limites</strong> com nossos planos de internet ilimitada compatíveis com as principais operadoras do Brasil. <strong>Rápido, estável e sem bloqueios!</strong>",
   "footer": {
-    "logo_url": "",
+    "logo_url": "/images/uploads/photo_1_2025-05-25_17-00-03-removebg-preview.png",
     "logo_text": "TROÇO",
     "copyright_text": "Conectando você ao que importa. © 2025 Troço Net - Todos os direitos reservados."
   },
@@ -40,6 +42,21 @@
       "icone": "fab fa-instagram"
     }
   ],
+  "business_benefits": [
+    {
+      "icon": "fas fa-percentage",
+      "title": "Lucro Garantido",
+      "description": "Margens de até 300% na revenda dos créditos/logins"
+    }
+  ],
+  "how_it_works_steps": [
+    { "text": "Escolha seu plano preferido" },
+    { "text": "Faça o pagamento via PIX" }
+  ],
+  "referral_program": {
+    "title": "📢 Programa de Indicação Troço Net",
+    "tagline": "Indique e GANHE! 😍"
+  },
   "planos_pessoais": [
     {
       "nome": "Mensal",
@@ -103,80 +120,36 @@
       "nome": "10 Créditos",
       "preco": 20,
       "beneficios": "Sem mensalidade;Painel básico;Ativação imediata"
-    }
-  ],
-  "redes_sociais": [
+    },
     {
-      "nome": "Instagram",
-      "url": "https://www.instagram.com/trocodigital",
-      "icone": "fab fa-instagram"
-    }
-  ],
-  "hero_tagline": "Internet ilimitada 4G/5G para Android",
-  "planos_revenda_mensal": [
+      "nome": "20 Créditos",
+      "preco": 30,
+      "beneficios": "Sem mensalidade;Painel básico;Economia de R$10"
+    },
     {
-      "nome": "100 Logins",
+      "nome": "50 Créditos",
       "preco": 60,
-      "beneficios": "100 acessos simultâneos;Painel básico;Suporte padrão"
+      "beneficios": "Sem mensalidade;Painel premium;Suporte prioritário"
     },
     {
-      "nome": "200 Logins",
-      "preco": 70,
-      "beneficios": "200 acessos simultâneos;Painel básico;Suporte prioritário"
-    },
-    {
-      "nome": "300 Logins",
+      "nome": "100 Créditos",
       "preco": 120,
-      "beneficios": "300 acessos simultâneos;Painel premium;Suporte prioritário"
+      "beneficios": "Sem mensalidade;Painel premium;Melhor custo-benefício"
     },
     {
-      "nome": "1.000 Logins",
-      "preco": 140,
-      "beneficios": "1.000 acessos simultâneos;Painel premium;Suporte dedicado;Melhor custo-benefício"
+      "nome": "500 Créditos",
+      "preco": 250,
+      "beneficios": "Sem mensalidade;Painel premium;Suporte dedicado"
     },
     {
-      "nome": "2.000 Logins",
-      "preco": 180,
-      "beneficios": "2.000 acessos simultâneos;Painel premium;Suporte dedicado;Conta master"
+      "nome": "1.000 Créditos",
+      "preco": 300,
+      "beneficios": "Sem mensalidade;Painel empresarial;Suporte 24/7"
     },
     {
-      "nome": "10.000 Logins",
-      "preco": 240,
-      "beneficios": "10.000 acessos simultâneos;Painel empresarial;Suporte 24/7;Conta master"
+      "nome": "10.000 Créditos",
+      "preco": 600,
+      "beneficios": "Sem mensalidade;Painel empresarial;Conta master;Melhor oferta"
     }
-  ],
-  "visibility": {
-    "reseller_section": true,
-    "referral_program": true,
-    "how_it_works_section": true,
-    "free_trial_section": true
-  },
-  "horario_atendimento": [
-    {
-      "titulo": "Segunda a Sexta",
-      "icone": "fas fa-calendar-day",
-      "horarios": [
-        {
-          "horario": "08h às 21h"
-        }
-      ]
-    }
-  ],
-  "hero_title": "Troço Net",
-  "cores": {
-    "primaria": "#5D50FE",
-    "primaria_escura": "#4539d4",
-    "secundaria": "#F3F4F6"
-  },
-  "links": {
-    "whatsapp": "https://wa.me/558481518164",
-    "whatsapp_number": "(84) 8151-8164",
-    "telegram": "https://t.me/suporte_trocodigital",
-    "pix_key": "71181961-2356-4ba8-aeec-1997b5ff2f0d"
-  },
-  "footer": {
-    "logo_url": "/images/uploads/photo_1_2025-05-25_17-00-03-removebg-preview.png",
-    "logo_text": "TROÇO",
-    "copyright_text": "Conectando você ao que importa. © 2025 Troço Net - Todos os direitos reservados."
-  }
+  ]
 }

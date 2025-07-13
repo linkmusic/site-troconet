@@ -133,20 +133,8 @@
   },
   "horario_atendimento": [
     {
-      "titulo": "Segunda a Sexta",
+      "titulo": "Segunda a Domingo",
       "icone": "fas fa-calendar-day",
-      "horarios": [
-        {
-          "horario": "05h às 06h30"
-        },
-        {
-          "horario": "18h às 21h"
-        }
-      ]
-    },
-    {
-      "titulo": "Sábado e Domingo",
-      "icone": "fas fa-calendar-weekend",
       "horarios": [
         {
           "horario": "08h às 21h"

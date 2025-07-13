@@ -256,8 +256,13 @@
             howItWorksContainer.innerHTML = data.how_it_works_steps.map((step, index) => `<div class="step"><div class="step-number">${index + 1}</div><p>${step.text}</p></div>`).join('');
         }
 
-        document.getElementById('referral-title').textContent = data.referral_program.title;
-        document.getElementById('referral-tagline').textContent = data.referral_program.tagline;
+        // --- CORREÇÃO PARA O ERRO 'Cannot read properties of undefined (reading 'title')' ---
+        const referralTitle = document.getElementById('referral-title');
+        const referralTagline = document.getElementById('referral-tagline');
+        if (data.referral_program) {
+            if(referralTitle) referralTitle.textContent = data.referral_program.title;
+            if(referralTagline) referralTagline.textContent = data.referral_program.tagline;
+        }
 
         const workingHoursContainer = document.getElementById('working-hours-container');
         if (data.horario_atendimento && data.horario_atendimento.length > 0) {
@@ -271,7 +276,6 @@
         
         generateHTML('social-links-container', data.redes_sociais, link => `<a href="${link.url}" target="_blank" title="${link.nome}"><i class="${link.icone}"></i></a>`);
         
-        // --- Rodapé Dinâmico ---
         const footerLogoContainer = document.getElementById('footer-logo-container');
         if (data.footer && data.footer.logo_url) {
             footerLogoContainer.innerHTML = `<img src="${data.footer.logo_url}" alt="Logótipo Troço Net" style="max-height: 40px;">`;

@@ -42,6 +42,10 @@
       "icone": "fab fa-instagram"
     }
   ],
+  "referral_program": {
+    "title": "📢 Programa de Indicação Troço Net",
+    "tagline": "Indique e GANHE! 😍"
+  },
   "planos_pessoais": [
     {
       "nome": "Mensal",
@@ -54,18 +58,6 @@
       "preco": 15,
       "duracao": "90 dias de internet ilimitada",
       "popular": true
-    },
-    {
-      "nome": "Semestral",
-      "preco": 20,
-      "duracao": "180 dias de internet ilimitada",
-      "popular": false
-    },
-    {
-      "nome": "Anual",
-      "preco": 25,
-      "duracao": "365 dias de internet ilimitada",
-      "popular": false
     }
   ],
   "planos_revenda_mensal": [
@@ -73,31 +65,6 @@
       "nome": "100 Logins",
       "preco": 60,
       "beneficios": "100 acessos simultâneos;Painel básico;Suporte padrão"
-    },
-    {
-      "nome": "200 Logins",
-      "preco": 70,
-      "beneficios": "200 acessos simultâneos;Painel básico;Suporte prioritário"
-    },
-    {
-      "nome": "300 Logins",
-      "preco": 120,
-      "beneficios": "300 acessos simultâneos;Painel premium;Suporte prioritário"
-    },
-    {
-      "nome": "1.000 Logins",
-      "preco": 140,
-      "beneficios": "1.000 acessos simultâneos;Painel premium;Suporte dedicado;Melhor custo-benefício"
-    },
-    {
-      "nome": "2.000 Logins",
-      "preco": 180,
-      "beneficios": "2.000 acessos simultâneos;Painel premium;Suporte dedicado;Conta master"
-    },
-    {
-      "nome": "10.000 Logins",
-      "preco": 240,
-      "beneficios": "10.000 acessos simultâneos;Painel empresarial;Suporte 24/7;Conta master"
     }
   ],
   "planos_revenda_creditos": [
@@ -105,36 +72,6 @@
       "nome": "10 Créditos",
       "preco": 20,
       "beneficios": "Sem mensalidade;Painel básico;Ativação imediata"
-    },
-    {
-      "nome": "20 Créditos",
-      "preco": 30,
-      "beneficios": "Sem mensalidade;Painel básico;Economia de R$10"
-    },
-    {
-      "nome": "50 Créditos",
-      "preco": 60,
-      "beneficios": "Sem mensalidade;Painel premium;Suporte prioritário"
-    },
-    {
-      "nome": "100 Créditos",
-      "preco": 120,
-      "beneficios": "Sem mensalidade;Painel premium;Melhor custo-benefício"
-    },
-    {
-      "nome": "500 Créditos",
-      "preco": 250,
-      "beneficios": "Sem mensalidade;Painel premium;Suporte dedicado"
-    },
-    {
-      "nome": "1.000 Créditos",
-      "preco": 300,
-      "beneficios": "Sem mensalidade;Painel empresarial;Suporte 24/7"
-    },
-    {
-      "nome": "10.000 Créditos",
-      "preco": 600,
-      "beneficios": "Sem mensalidade;Painel empresarial;Conta master;Melhor oferta"
     }
   ]
 }

@@ -1,9 +1,47 @@
 {
+  "hero_title": "Troço Net",
+  "hero_tagline": "Internet ilimitada 4G/5G para Android",
   "intro_text": "Navegue <strong class=\"highlight\">sem limites</strong> com nossos planos de internet ilimitada compatíveis com as principais operadoras do Brasil. <strong>Rápido, estável e sem bloqueios!</strong>",
-  "referral_program": {
-    "title": "📢 Programa de Indicação Troço Net",
-    "tagline": "Indique e GANHE! 😍"
+  "footer": {
+    "logo_url": "",
+    "logo_text": "TROÇO",
+    "copyright_text": "Conectando você ao que importa. © 2025 Troço Net - Todos os direitos reservados."
   },
+  "visibility": {
+    "reseller_section": true,
+    "referral_program": true,
+    "how_it_works_section": true,
+    "free_trial_section": true
+  },
+  "cores": {
+    "primaria": "#5D50FE",
+    "primaria_escura": "#4539d4",
+    "secundaria": "#F3F4F6"
+  },
+  "links": {
+    "whatsapp": "https://wa.me/558481518164",
+    "whatsapp_number": "(84) 8151-8164",
+    "telegram": "https://t.me/suporte_trocodigital",
+    "pix_key": "71181961-2356-4ba8-aeec-1997b5ff2f0d"
+  },
+  "horario_atendimento": [
+    {
+      "titulo": "Segunda a Sexta",
+      "icone": "fas fa-calendar-day",
+      "horarios": [
+        {
+          "horario": "08h às 21h"
+        }
+      ]
+    }
+  ],
+  "redes_sociais": [
+    {
+      "nome": "Instagram",
+      "url": "https://www.instagram.com/trocodigital",
+      "icone": "fab fa-instagram"
+    }
+  ],
   "planos_pessoais": [
     {
       "nome": "Mensal",
@@ -15,7 +53,7 @@
       "nome": "Trimestral",
       "preco": 15,
       "duracao": "90 dias de internet ilimitada",
-      "popular": false
+      "popular": true
     },
     {
       "nome": "Semestral",
@@ -27,15 +65,39 @@
       "nome": "Anual",
       "preco": 25,
       "duracao": "365 dias de internet ilimitada",
-      "popular": true
+      "popular": false
     }
   ],
-  "how_it_works_steps": [
+  "planos_revenda_mensal": [
     {
-      "text": "Escolha seu plano preferido"
+      "nome": "100 Logins",
+      "preco": 60,
+      "beneficios": "100 acessos simultâneos;Painel básico;Suporte padrão"
     },
     {
-      "text": "Faça o pagamento via PIX"
+      "nome": "200 Logins",
+      "preco": 70,
+      "beneficios": "200 acessos simultâneos;Painel básico;Suporte prioritário"
+    },
+    {
+      "nome": "300 Logins",
+      "preco": 120,
+      "beneficios": "300 acessos simultâneos;Painel premium;Suporte prioritário"
+    },
+    {
+      "nome": "1.000 Logins",
+      "preco": 140,
+      "beneficios": "1.000 acessos simultâneos;Painel premium;Suporte dedicado;Melhor custo-benefício"
+    },
+    {
+      "nome": "2.000 Logins",
+      "preco": 180,
+      "beneficios": "2.000 acessos simultâneos;Painel premium;Suporte dedicado;Conta master"
+    },
+    {
+      "nome": "10.000 Logins",
+      "preco": 240,
+      "beneficios": "10.000 acessos simultâneos;Painel empresarial;Suporte 24/7;Conta master"
     }
   ],
   "planos_revenda_creditos": [
@@ -74,82 +136,5 @@
       "preco": 600,
       "beneficios": "Sem mensalidade;Painel empresarial;Conta master;Melhor oferta"
     }
-  ],
-  "redes_sociais": [
-    {
-      "nome": "Instagram",
-      "url": "https://www.instagram.com/trocodigital",
-      "icone": "fab fa-instagram"
-    }
-  ],
-  "hero_tagline": "Internet ilimitada 4G/5G para Android",
-  "planos_revenda_mensal": [
-    {
-      "nome": "100 Logins",
-      "preco": 60,
-      "beneficios": "100 acessos simultâneos;Painel básico;Suporte padrão"
-    },
-    {
-      "nome": "200 Logins",
-      "preco": 70,
-      "beneficios": "200 acessos simultâneos;Painel básico;Suporte prioritário"
-    },
-    {
-      "nome": "300 Logins",
-      "preco": 120,
-      "beneficios": "300 acessos simultâneos;Painel premium;Suporte prioritário"
-    },
-    {
-      "nome": "1.000 Logins",
-      "preco": 140,
-      "beneficios": "1.000 acessos simultâneos;Painel premium;Suporte dedicado;Melhor custo-benefício"
-    },
-    {
-      "nome": "2.000 Logins",
-      "preco": 180,
-      "beneficios": "2.000 acessos simultâneos;Painel premium;Suporte dedicado;Conta master"
-    },
-    {
-      "nome": "10.000 Logins",
-      "preco": 240,
-      "beneficios": "10.000 acessos simultâneos;Painel empresarial;Suporte 24/7;Conta master"
-    }
-  ],
-  "horario_atendimento": [
-    {
-      "titulo": "Segunda a Sexta",
-      "icone": "fas fa-calendar-day",
-      "horarios": [
-        {
-          "horario": "08h às 21h"
-        }
-      ]
-    }
-  ],
-  "hero_title": "Troço Net",
-  "cores": {
-    "primaria": "#5D50FE",
-    "primaria_escura": "#4539d4",
-    "secundaria": "#F3F4F6"
-  },
-  "links": {
-    "whatsapp": "https://wa.me/558481518164",
-    "whatsapp_number": "(84) 8151-8164",
-    "telegram": "https://t.me/suporte_trocodigital",
-    "pix_key": "71181961-2356-4ba8-aeec-1997b5ff2f0d"
-  },
-  "business_benefits": [
-    {
-      "icon": "fas fa-percentage",
-      "title": "Lucro Garantido",
-      "description": "Margens de até 300% na revenda dos créditos/logins"
-    }
-  ],
-  "footer": {
-    "logo_url": "/images/uploads/photo_1_2025-05-25_17-00-03-removebg-preview.png",
-    "logo_text": "TROÇO",
-    "copyright_text": "Conectando você ao que importa. © 2025 Troço Net - Todos os direitos reservados.",
-    "credit_text": "Feito por Troço Dev",
-    "credit_link": "https://trocodev.site"
-  }
+  ]
 }

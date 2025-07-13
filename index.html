@@ -85,7 +85,7 @@
     .footer-logo span { color: var(--primary); }
     .footer-logo img { max-height: 40px; }
     .footer-info { font-size: 0.9rem; }
-    .footer-credit { margin-top: 16px; font-size: 0.875rem; color: var(--gray); }
+    .footer-credit { margin-top: 24px; padding-top: 24px; border-top: 1px solid #374151; font-size: 0.875rem; color: var(--gray); }
     .footer-credit a { color: var(--light); text-decoration: none; font-weight: 500; transition: color 0.3s ease; }
     .footer-credit a:hover { color: var(--primary); }
     @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
@@ -105,6 +105,7 @@
     </div>
     
     <div class="content">
+
       <div class="section">
         <p id="intro-text" class="intro"></p>
         <div class="compatibility">
@@ -113,12 +114,14 @@
           <div class="operator"><i class="fas fa-sim-card"></i><span>Claro</span></div>
         </div>
       </div>
+      
       <div class="section">
         <h2>Nossos Planos</h2>
         <p class="section-description">Escolha o plano ideal para você e navegue sem preocupações, com a velocidade e estabilidade que você merece.</p>
         <div id="plans-grid-pessoal" class="plans-grid"></div>
       </div>
-      <div class="section">
+      
+      <div id="reseller-section" class="section">
         <h2>Seja um Revendedor</h2>
         <p class="section-description">Tenha seu próprio negócio de internet com nosso painel de revendas. Escolha o modelo que melhor se adapta a você.</p>
         <div class="pricing-tabs">
@@ -127,9 +130,9 @@
         </div>
         <div id="monthly" class="tab-content" style="display: block;"><div id="plans-grid-revenda-mensal" class="plans-grid"></div></div>
         <div id="credits" class="tab-content"><div id="plans-grid-revenda-creditos" class="plans-grid"></div></div>
-        <div id="business-benefits-container" class="plans-grid"></div>
       </div>
-      <div class="section">
+
+      <div id="referral-section" class="section">
         <div class="referral-program">
           <h2 id="referral-title"></h2>
           <p id="referral-tagline" class="section-description"></p>
@@ -146,27 +149,36 @@
           <a id="whatsapp-link-indicacao" href="" class="btn" style="margin: 32px auto 0; max-width: 250px;"><i class="fab fa-whatsapp"></i> Quero Participar</a>
         </div>
       </div>
-      <div class="section">
+
+      <div id="how-it-works-section" class="section">
         <div class="how-it-works">
           <h2>Como Funciona?</h2>
           <p class="section-description">É simples, rápido e seguro. Siga os passos abaixo e comece a navegar sem limites em poucos minutos.</p>
           <div id="how-it-works-container" class="steps"></div>
         </div>
       </div>
+      
       <div class="section pix-box">
         <h3>Pagamento via PIX</h3>
         <p>Use a chave abaixo e envie o comprovante para o nosso WhatsApp.</p>
         <div id="pix-key" class="pix-key"></div>
         <p class="note"><i class="fas fa-info-circle"></i> Envie o comprovante para: <strong id="pix-contact"></strong></p>
       </div>
+      
+      <div id="free-trial-section" class="section">
+          <h2>Experimente Grátis</h2>
+          <p class="section-description">Oferecemos 1 hora de internet ilimitada gratuita para você testar nossa qualidade antes de assinar qualquer plano!</p>
+          <a id="whatsapp-link-teste-gratis" href="" class="btn btn-outline" style="max-width: 250px; margin: 0 auto;">Pedir Teste Grátis</a>
+      </div>
+      
       <div id="working-hours-container" class="section working-hours"></div>
     </div>
     
     <footer>
       <div id="footer-logo-container" class="footer-logo"></div>
       <p id="footer-copyright-text" class="footer-info"></p>
-      <p id="footer-credit-container" class="footer-credit"></p>
-      <div id="social-links-container" class="social-links" style="margin-top: 24px;"></div>
+      <div id="social-links-container" class="social-links" style="margin-top: 24px; margin-bottom: 24px;"></div>
+      <p class="footer-credit">Feito por <a href="https://trocodev.site" target="_blank" rel="noopener noreferrer">Troço Dev</a></p>
     </footer>
   </div>
   
@@ -199,15 +211,26 @@
         document.getElementById('intro-text').innerHTML = data.intro_text;
         document.getElementById('pix-key').textContent = data.links.pix_key;
         document.getElementById('pix-contact').textContent = data.links.whatsapp_number;
+        
         const whatsappBaseLink = data.links.whatsapp;
         document.getElementById('whatsapp-link-indicacao').href = `${whatsappBaseLink}?text=Olá! Quero participar do Programa de Indicação da Troço Net.`;
+        document.getElementById('whatsapp-link-teste-gratis').href = `${whatsappBaseLink}?text=Olá! Quero fazer o teste grátis de 1 hora.`;
+        
+        // --- Visibilidade das Secções ---
+        if (data.visibility) {
+            document.getElementById('reseller-section').style.display = data.visibility.reseller_section ? 'block' : 'none';
+            document.getElementById('referral-section').style.display = data.visibility.referral_program ? 'block' : 'none';
+            document.getElementById('how-it-works-section').style.display = data.visibility.how_it_works_section ? 'block' : 'none';
+            document.getElementById('free-trial-section').style.display = data.visibility.free_trial_section ? 'block' : 'none';
+        }
 
         // --- Geração de Conteúdo Dinâmico ---
         const generateHTML = (containerId, dataArray, htmlTemplate) => {
           const container = document.getElementById(containerId);
-          if (container && dataArray && dataArray.length > 0) {
+          if (!container) return;
+          if (dataArray && dataArray.length > 0) {
             container.innerHTML = dataArray.map(htmlTemplate).join('');
-          } else if (container) {
+          } else {
             container.innerHTML = '';
           }
         };
@@ -227,8 +250,6 @@
           const beneficiosHTML = plano.beneficios.split(';').map(b => `<li>${b.trim()}</li>`).join('');
           return `<div class="plan-card business"><div class="plan-name">${plano.nome}</div><div class="plan-price"><span class="currency">R$</span><span class="integer">${parseInt(plano.preco)}</span><span class="decimal">,00</span></div><ul class="benefits-list">${beneficiosHTML}</ul><a href="${whatsappBaseLink}?text=Olá! Quero comprar ${plano.nome} por R$${plano.preco}" class="btn btn-business">Comprar Créditos</a></div>`;
         });
-
-        generateHTML('business-benefits-container', data.business_benefits, benefit => `<div class="plan-card"><h4 class="plan-name" style="text-align:center;"><i class="${benefit.icon}"></i><br>${benefit.title}</h4><p style="text-align:center;">${benefit.description}</p></div>`);
         
         const howItWorksContainer = document.getElementById('how-it-works-container');
         if (howItWorksContainer && data.how_it_works_steps) {
@@ -261,11 +282,6 @@
         const footerCopyright = document.getElementById('footer-copyright-text');
         if (footerCopyright && data.footer) {
             footerCopyright.textContent = data.footer.copyright_text;
-        }
-
-        const footerCredit = document.getElementById('footer-credit-container');
-        if (footerCredit && data.footer && data.footer.credit_text) {
-            footerCredit.innerHTML = `${data.footer.credit_text.replace('Troço Dev', `<a href="${data.footer.credit_link}" target="_blank" rel="noopener noreferrer">Troço Dev</a>`)}`;
         }
 
       } catch (error) {

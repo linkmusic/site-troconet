@@ -3,7 +3,7 @@
   "hero_tagline": "Internet ilimitada 4G/5G para Android",
   "intro_text": "Navegue <strong class=\"highlight\">sem limites</strong> com nossos planos de internet ilimitada compatíveis com as principais operadoras do Brasil. <strong>Rápido, estável e sem bloqueios!</strong>",
   "footer": {
-    "logo_url": "/images/uploads/photo_1_2025-05-25_17-00-03-removebg-preview.png",
+    "logo_url": "",
     "logo_text": "TROÇO",
     "copyright_text": "Conectando você ao que importa. © 2025 Troço Net - Todos os direitos reservados."
   },
@@ -29,9 +29,7 @@
       "titulo": "Segunda a Sexta",
       "icone": "fas fa-calendar-day",
       "horarios": [
-        {
-          "horario": "08h às 21h"
-        }
+        { "horario": "08h às 21h" }
       ]
     }
   ],
@@ -41,17 +39,6 @@
       "url": "https://www.instagram.com/trocodigital",
       "icone": "fab fa-instagram"
     }
-  ],
-  "business_benefits": [
-    {
-      "icon": "fas fa-percentage",
-      "title": "Lucro Garantido",
-      "description": "Margens de até 300% na revenda dos créditos/logins"
-    }
-  ],
-  "how_it_works_steps": [
-    { "text": "Escolha seu plano preferido" },
-    { "text": "Faça o pagamento via PIX" }
   ],
   "referral_program": {
     "title": "📢 Programa de Indicação Troço Net",

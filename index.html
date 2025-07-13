@@ -256,7 +256,6 @@
             howItWorksContainer.innerHTML = data.how_it_works_steps.map((step, index) => `<div class="step"><div class="step-number">${index + 1}</div><p>${step.text}</p></div>`).join('');
         }
 
-        // --- CORREÇÃO PARA O ERRO 'Cannot read properties of undefined (reading 'title')' ---
         const referralTitle = document.getElementById('referral-title');
         const referralTagline = document.getElementById('referral-tagline');
         if (data.referral_program) {

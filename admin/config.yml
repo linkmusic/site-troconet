@@ -64,7 +64,7 @@ collections:
             name: "redes_sociais"
             widget: "list"
             fields:
-              - { label: "Nome da Rede (ex: Instagram)", name: "nome", widget: "string" }
+              - { label: "Nome da Rede", name: "nome", widget: "string" }
               - { label: "Link Completo (URL)", name: "url", widget: "string" }
               - { label: "Ícone (ex: fab fa-instagram)", name: "icone", widget: "string" }
           - label: "Planos Pessoais"
@@ -72,20 +72,20 @@ collections:
             widget: "list"
             fields:
               - { label: "Nome", name: "nome", widget: "string" }
-              - { label: "Preço (ex: 15.00)", name: "preco", widget: "number" }
+              - { label: "Preço", name: "preco", widget: "number" }
               - { label: "Duração", name: "duracao", widget: "string" }
-              - { label: "É o mais popular?", name: "popular", widget: "boolean", default: false }
+              - { label: "Popular?", name: "popular", widget: "boolean", default: false }
           - label: "Planos de Revenda (Mensal)"
             name: "planos_revenda_mensal"
             widget: "list"
             fields:
               - { label: "Nome", name: "nome", widget: "string" }
-              - { label: "Preço (ex: 60.00)", name: "preco", widget: "number" }
-              - { label: "Benefícios (separados por ponto e vírgula ';')", name: "beneficios", widget: "string" }
+              - { label: "Preço", name: "preco", widget: "number" }
+              - { label: "Benefícios (separados por ';')", name: "beneficios", widget: "string" }
           - label: "Planos de Revenda (Créditos)"
             name: "planos_revenda_creditos"
             widget: "list"
             fields:
               - { label: "Nome", name: "nome", widget: "string" }
-              - { label: "Preço (ex: 20.00)", name: "preco", widget: "number" }
-              - { label: "Benefícios (separados por ponto e vírgula ';')", name: "beneficios", widget: "string" }
+              - { label: "Preço", name: "preco", widget: "number" }
+              - { label: "Benefícios (separados por ';')", name: "beneficios", widget: "string" }

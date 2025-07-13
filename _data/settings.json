@@ -126,10 +126,12 @@
   ],
   "horario_atendimento": [
     {
-      "titulo": "Segunda a Domingo",
+      "titulo": "Segunda a Sexta",
       "icone": "fas fa-calendar-day",
       "horarios": [
-        "08h ás 21h"
+        {
+          "horario": "08h às 21h"
+        }
       ]
     }
   ],

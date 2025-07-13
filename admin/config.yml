@@ -81,11 +81,11 @@ collections:
             fields:
               - { label: "Nome", name: "nome", widget: "string" }
               - { label: "Preço (ex: 60.00)", name: "preco", widget: "number" }
-              - { label: "Benefícios (separados por ';')", name: "beneficios", widget: "string" }
+              - { label: "Benefícios (separados por ponto e vírgula ';')", name: "beneficios", widget: "string" }
           - label: "Planos de Revenda (Créditos)"
             name: "planos_revenda_creditos"
             widget: "list"
             fields:
               - { label: "Nome", name: "nome", widget: "string" }
               - { label: "Preço (ex: 20.00)", name: "preco", widget: "number" }
-              - { label: "Benefícios (separados por ';')", name: "beneficios", widget: "string" }
+              - { label: "Benefícios (separados por ponto e vírgula ';')", name: "beneficios", widget: "string" }

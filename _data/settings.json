@@ -15,7 +15,7 @@
       "nome": "Trimestral",
       "preco": 15,
       "duracao": "90 dias de internet ilimitada",
-      "popular": true
+      "popular": false
     },
     {
       "nome": "Semestral",
@@ -27,7 +27,7 @@
       "nome": "Anual",
       "preco": 25,
       "duracao": "365 dias de internet ilimitada",
-      "popular": false
+      "popular": true
     }
   ],
   "how_it_works_steps": [

@@ -144,9 +144,9 @@
   ],
   "hero_title": "Troço Net",
   "cores": {
-    "primaria": "#5D50FE",
-    "primaria_escura": "#4539d4",
-    "secundaria": "#F3F4F6"
+    "primaria": "#e13f8f",
+    "primaria_escura": "#000000",
+    "secundaria": "#ffffff"
   },
   "links": {
     "whatsapp": "https://wa.me/558481518164",

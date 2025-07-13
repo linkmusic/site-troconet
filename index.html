@@ -8,48 +8,36 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    /* --- DESIGN ATUALIZADO (PROFISSIONAL V2.2) --- */
-
     :root {
       --primary: #5D50FE;
       --primary-dark: #4539d4;
       --secondary: #F3F4F6;
       --accent: #7C3AED;
-      
       --dark: #111827;
       --light: #FFFFFF;
       --text: #374151;
       --gray: #6B7280;
-      
       --success: #10B981;
       --whatsapp: #25D366;
       --telegram: #2AABEE;
       --business: #5D50FE;
-
       --font-family: 'Inter', sans-serif;
     }
-    
     * { margin: 0; padding: 0; box-sizing: border-box; font-family: var(--font-family); }
     body { background-color: var(--secondary); color: var(--text); line-height: 1.6; text-align: center; display: flex; flex-direction: column; align-items: center; padding: 24px 0; }
     .container { max-width: 1100px; width: 100%; margin: 20px; background: var(--light); border-radius: 24px; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05); overflow: hidden; border: 1px solid #E5E7EB; }
-    
-    /* --- Seção Hero --- */
     .hero-container { position: relative; height: 400px; display: flex; align-items: center; justify-content: center; }
     .hero-container img { width: 100%; height: 100%; object-fit: cover; filter: brightness(0.6); }
     .hero-overlay { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(93, 80, 254, 0.85) 0%, rgba(124, 58, 237, 0.8) 100%); display: flex; flex-direction: column; align-items: center; justify-content: center; color: white; padding: 20px; }
     h1 { font-size: 3.2rem; font-weight: 700; color: white; text-shadow: 0 2px 6px rgba(0,0,0,0.2); margin-bottom: 1rem; }
     .tagline { font-size: 1.2rem; font-weight: 400; margin-bottom: 1.5rem; opacity: 0.9; color: white; max-width: 550px; }
     .android-only { background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2); color: white; padding: 8px 16px; border-radius: 9999px; font-size: 0.9rem; font-weight: 500; backdrop-filter: blur(5px); }
-
-    /* --- Seções de Conteúdo --- */
     .content { padding: 60px 40px; }
     .section { margin-bottom: 80px; }
     h2 { font-size: 2.5rem; color: var(--dark); margin: 0 0 1rem 0; font-weight: 700; }
     .section-description { font-size: 1.1rem; color: var(--gray); max-width: 600px; margin: 0 auto 40px auto; }
     .intro { font-size: 1.15rem; margin: 0 auto 50px; max-width: 700px; line-height: 1.8; color: var(--gray); }
     .highlight { background-color: var(--secondary); padding: 2px 8px; border-radius: 6px; font-weight: 600; color: var(--primary); }
-    
-    /* --- Cartões de Planos --- */
     .plans-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 32px; margin-top: 50px; }
     .plan-card { background: var(--light); border-radius: 16px; padding: 32px; box-shadow: 0 4px 16px rgba(0,0,0,0.05); border: 1px solid #E5E7EB; transition: all 0.3s ease; position: relative; overflow: hidden; display: flex; flex-direction: column; text-align: left; }
     .plan-card:hover { transform: translateY(-8px); box-shadow: 0 12px 32px rgba(93, 80, 254, 0.1); border-color: var(--primary); }
@@ -63,23 +51,17 @@
     .benefits-list { margin-top: auto; margin-bottom: 24px; text-align: left; list-style: none; padding: 0; }
     .benefits-list li { margin-bottom: 12px; display: flex; align-items: center; gap: 10px; color: var(--text); }
     .benefits-list li::before { content: "\f00c"; font-family: "Font Awesome 6 Free"; font-weight: 900; color: var(--primary); font-size: 0.9rem; }
-    
-    /* --- Botões --- */
     .btn { display: block; width: 100%; padding: 14px 28px; background: var(--primary); color: var(--light); text-decoration: none; border-radius: 12px; font-weight: 600; transition: all 0.2s ease-in-out; border: 2px solid transparent; cursor: pointer; text-align: center; font-size: 1rem; }
     .btn:hover { background: var(--primary-dark); transform: translateY(-2px); }
     .btn.btn-business { background: var(--business); }
     .btn.btn-business:hover { background: var(--primary-dark); }
     .btn-outline { background: var(--light); color: var(--primary); border-color: var(--primary); }
     .btn-outline:hover { background: var(--primary); color: var(--light); }
-
-    /* --- Abas de Revenda --- */
     .pricing-tabs { display: flex; justify-content: center; margin-bottom: 40px; background: var(--secondary); border-radius: 12px; padding: 6px; }
     .tab-btn { padding: 10px 20px; background: transparent; border: none; color: var(--gray); border-radius: 8px; font-weight: 600; cursor: pointer; transition: all 0.3s ease; font-size: 1rem; }
     .tab-btn.active { background: var(--light); color: var(--primary); box-shadow: 0 2px 10px rgba(0,0,0,0.08); }
     .tab-content { display: none; animation: fadeIn 0.5s ease; }
     .business .plan-name { color: var(--dark); }
-
-    /* --- Outras Seções --- */
     .compatibility { display: flex; justify-content: center; flex-wrap: wrap; gap: 24px; margin-top: 40px; }
     .operator { display: flex; align-items: center; gap: 12px; background: var(--light); padding: 12px 24px; border-radius: 12px; border: 1px solid #E5E7EB; }
     .operator i { font-size: 1.8rem; color: var(--primary); }
@@ -95,21 +77,17 @@
     .hours-group { background: var(--secondary); padding: 24px; border-radius: 12px; text-align: center; }
     .hours-group strong { display: flex; align-items: center; gap: 10px; font-size: 1.1rem; color: var(--dark); margin-bottom: 1rem; justify-content: center; }
     .hours-group div { display: flex; align-items: center; gap: 8px; color: var(--gray); justify-content: center; }
-    
-    /* --- Rodapé e Links Sociais --- */
     .social-links { display: flex; justify-content: center; gap: 16px; }
     .social-links a { width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center; background: var(--secondary); color: var(--gray); font-size: 1.2rem; transition: all 0.3s ease; }
     .social-links a:hover { background: var(--primary); color: var(--light); transform: translateY(-3px); }
     footer { padding: 40px; background: var(--dark); color: #9CA3AF; margin-top: 40px; }
     .footer-logo { font-size: 1.5rem; font-weight: 700; color: var(--light); margin-bottom: 1rem; }
     .footer-logo span { color: var(--primary); }
+    .footer-logo img { max-height: 40px; }
     .footer-info { font-size: 0.9rem; }
-    .footer-credit { margin-top: 16px; font-size: 0.875rem; color: var(--gray); } /* Estilo para os créditos */
+    .footer-credit { margin-top: 16px; font-size: 0.875rem; color: var(--gray); }
     .footer-credit a { color: var(--light); text-decoration: none; font-weight: 500; transition: color 0.3s ease; }
     .footer-credit a:hover { color: var(--primary); }
-
-
-    /* --- Animações e Responsividade --- */
     @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
     @media (max-width: 768px) { h1 { font-size: 2.5rem; } h2 { font-size: 2rem; } .content { padding: 40px 20px; } .plans-grid { grid-template-columns: 1fr; max-width: 380px; } .plan-card.popular { transform: scale(1); } }
   </style>
@@ -127,7 +105,6 @@
     </div>
     
     <div class="content">
-
       <div class="section">
         <p id="intro-text" class="intro"></p>
         <div class="compatibility">
@@ -136,13 +113,11 @@
           <div class="operator"><i class="fas fa-sim-card"></i><span>Claro</span></div>
         </div>
       </div>
-      
       <div class="section">
         <h2>Nossos Planos</h2>
         <p class="section-description">Escolha o plano ideal para você e navegue sem preocupações, com a velocidade e estabilidade que você merece.</p>
         <div id="plans-grid-pessoal" class="plans-grid"></div>
       </div>
-      
       <div class="section">
         <h2>Seja um Revendedor</h2>
         <p class="section-description">Tenha seu próprio negócio de internet com nosso painel de revendas. Escolha o modelo que melhor se adapta a você.</p>
@@ -150,15 +125,10 @@
           <button class="tab-btn active" onclick="openTab(event, 'monthly')">Plano Mensalista</button>
           <button class="tab-btn" onclick="openTab(event, 'credits')">Plano por Créditos</button>
         </div>
-        <div id="monthly" class="tab-content" style="display: block;">
-          <div id="plans-grid-revenda-mensal" class="plans-grid"></div>
-        </div>
-        <div id="credits" class="tab-content">
-          <div id="plans-grid-revenda-creditos" class="plans-grid"></div>
-        </div>
+        <div id="monthly" class="tab-content" style="display: block;"><div id="plans-grid-revenda-mensal" class="plans-grid"></div></div>
+        <div id="credits" class="tab-content"><div id="plans-grid-revenda-creditos" class="plans-grid"></div></div>
         <div id="business-benefits-container" class="plans-grid"></div>
       </div>
-
       <div class="section">
         <div class="referral-program">
           <h2 id="referral-title"></h2>
@@ -176,7 +146,6 @@
           <a id="whatsapp-link-indicacao" href="" class="btn" style="margin: 32px auto 0; max-width: 250px;"><i class="fab fa-whatsapp"></i> Quero Participar</a>
         </div>
       </div>
-
       <div class="section">
         <div class="how-it-works">
           <h2>Como Funciona?</h2>
@@ -184,23 +153,19 @@
           <div id="how-it-works-container" class="steps"></div>
         </div>
       </div>
-      
       <div class="section pix-box">
         <h3>Pagamento via PIX</h3>
         <p>Use a chave abaixo e envie o comprovante para o nosso WhatsApp.</p>
         <div id="pix-key" class="pix-key"></div>
         <p class="note"><i class="fas fa-info-circle"></i> Envie o comprovante para: <strong id="pix-contact"></strong></p>
       </div>
-      
-      <div id="working-hours-container" class="section working-hours">
-          </div>
-
+      <div id="working-hours-container" class="section working-hours"></div>
     </div>
     
     <footer>
-      <div class="footer-logo">TROÇO<span>NET</span></div>
-      <p class="footer-info">Conectando você ao que importa. © 2025 Troço Net - Todos os direitos reservados.</p>
-      <p class="footer-credit">Feito por <a href="https://trocodev.site" target="_blank" rel="noopener noreferrer">Troço Dev</a></p>
+      <div id="footer-logo-container" class="footer-logo"></div>
+      <p id="footer-copyright-text" class="footer-info"></p>
+      <p id="footer-credit-container" class="footer-credit"></p>
       <div id="social-links-container" class="social-links" style="margin-top: 24px;"></div>
     </footer>
   </div>
@@ -223,63 +188,51 @@
         if (!response.ok) throw new Error(`Erro de rede: ${response.statusText}`);
         const data = await response.json();
 
+        // --- Atualizações Gerais ---
         if (data.cores) {
           document.documentElement.style.setProperty('--primary', data.cores.primaria);
           document.documentElement.style.setProperty('--primary-dark', data.cores.primaria_escura);
           document.documentElement.style.setProperty('--secondary', data.cores.secundaria);
         }
-
         document.getElementById('hero-title').textContent = data.hero_title;
         document.getElementById('hero-tagline').textContent = data.hero_tagline;
         document.getElementById('intro-text').innerHTML = data.intro_text;
         document.getElementById('pix-key').textContent = data.links.pix_key;
         document.getElementById('pix-contact').textContent = data.links.whatsapp_number;
-        
         const whatsappBaseLink = data.links.whatsapp;
         document.getElementById('whatsapp-link-indicacao').href = `${whatsappBaseLink}?text=Olá! Quero participar do Programa de Indicação da Troço Net.`;
 
-        const plansGridPessoal = document.getElementById('plans-grid-pessoal');
-        plansGridPessoal.innerHTML = '';
-        if (data.planos_pessoais) {
-          data.planos_pessoais.forEach(plano => {
-            const popularClass = plano.popular ? 'popular' : '';
-            const precoPartes = parseFloat(plano.preco).toFixed(2).split('.');
-            plansGridPessoal.innerHTML += `<div class="plan-card ${popularClass}"><div class="plan-name">${plano.nome}</div><div class="plan-price"><span class="currency">R$</span><span class="integer">${precoPartes[0]}</span><span class="decimal">,${precoPartes[1]}</span></div><div class="plan-duration">${plano.duracao}</div><ul class="benefits-list"><li>Velocidade 4G/5G</li><li>Uso ilimitado</li><li>Suporte especializado</li><li>Configuração fácil</li></ul><a href="${whatsappBaseLink}?text=Olá! Quero assinar o Plano ${plano.nome} de R$${plano.preco.toFixed(2)}" class="btn">Assinar Agora</a></div>`;
-          });
-        }
+        // --- Geração de Conteúdo Dinâmico ---
+        const generateHTML = (containerId, dataArray, htmlTemplate) => {
+          const container = document.getElementById(containerId);
+          if (container && dataArray && dataArray.length > 0) {
+            container.innerHTML = dataArray.map(htmlTemplate).join('');
+          } else if (container) {
+            container.innerHTML = '';
+          }
+        };
 
-        const plansGridMensal = document.getElementById('plans-grid-revenda-mensal');
-        plansGridMensal.innerHTML = '';
-        if (data.planos_revenda_mensal) {
-          data.planos_revenda_mensal.forEach(plano => {
-            const beneficiosHTML = plano.beneficios.split(';').map(b => `<li>${b.trim()}</li>`).join('');
-            plansGridMensal.innerHTML += `<div class="plan-card business"><div class="plan-name">${plano.nome}</div><div class="plan-price"><span class="currency">R$</span><span class="integer">${parseInt(plano.preco)}</span><span class="decimal">,00/mês</span></div><ul class="benefits-list">${beneficiosHTML}</ul><a href="${whatsappBaseLink}?text=Olá! Quero assinar o plano de revenda de ${plano.nome} por R$${plano.preco}/mês" class="btn btn-business">Assinar Mensal</a></div>`;
-          });
-        }
-
-        const plansGridCreditos = document.getElementById('plans-grid-revenda-creditos');
-        plansGridCreditos.innerHTML = '';
-        if (data.planos_revenda_creditos) {
-          data.planos_revenda_creditos.forEach(plano => {
-            const beneficiosHTML = plano.beneficios.split(';').map(b => `<li>${b.trim()}</li>`).join('');
-            plansGridCreditos.innerHTML += `<div class="plan-card business"><div class="plan-name">${plano.nome}</div><div class="plan-price"><span class="currency">R$</span><span class="integer">${parseInt(plano.preco)}</span><span class="decimal">,00</span></div><ul class="benefits-list">${beneficiosHTML}</ul><a href="${whatsappBaseLink}?text=Olá! Quero comprar ${plano.nome} por R$${plano.preco}" class="btn btn-business">Comprar Créditos</a></div>`;
-          });
-        }
+        generateHTML('plans-grid-pessoal', data.planos_pessoais, plano => {
+          const popularClass = plano.popular ? 'popular' : '';
+          const precoPartes = parseFloat(plano.preco).toFixed(2).split('.');
+          return `<div class="plan-card ${popularClass}"><div class="plan-name">${plano.nome}</div><div class="plan-price"><span class="currency">R$</span><span class="integer">${precoPartes[0]}</span><span class="decimal">,${precoPartes[1]}</span></div><div class="plan-duration">${plano.duracao}</div><ul class="benefits-list"><li>Velocidade 4G/5G</li><li>Uso ilimitado</li><li>Suporte especializado</li><li>Configuração fácil</li></ul><a href="${whatsappBaseLink}?text=Olá! Quero assinar o Plano ${plano.nome} de R$${plano.preco.toFixed(2)}" class="btn">Assinar Agora</a></div>`;
+        });
         
-        const businessBenefitsContainer = document.getElementById('business-benefits-container');
-        businessBenefitsContainer.innerHTML = '';
-        if (data.business_benefits) {
-          data.business_benefits.forEach(benefit => {
-              businessBenefitsContainer.innerHTML += `<div class="plan-card"><h4 class="plan-name" style="text-align:center;"><i class="${benefit.icon}"></i><br>${benefit.title}</h4><p style="text-align:center;">${benefit.description}</p></div>`;
-          });
-        }
+        generateHTML('plans-grid-revenda-mensal', data.planos_revenda_mensal, plano => {
+          const beneficiosHTML = plano.beneficios.split(';').map(b => `<li>${b.trim()}</li>`).join('');
+          return `<div class="plan-card business"><div class="plan-name">${plano.nome}</div><div class="plan-price"><span class="currency">R$</span><span class="integer">${parseInt(plano.preco)}</span><span class="decimal">,00/mês</span></div><ul class="benefits-list">${beneficiosHTML}</ul><a href="${whatsappBaseLink}?text=Olá! Quero assinar o plano de revenda de ${plano.nome} por R$${plano.preco}/mês" class="btn btn-business">Assinar Mensal</a></div>`;
+        });
 
+        generateHTML('plans-grid-revenda-creditos', data.planos_revenda_creditos, plano => {
+          const beneficiosHTML = plano.beneficios.split(';').map(b => `<li>${b.trim()}</li>`).join('');
+          return `<div class="plan-card business"><div class="plan-name">${plano.nome}</div><div class="plan-price"><span class="currency">R$</span><span class="integer">${parseInt(plano.preco)}</span><span class="decimal">,00</span></div><ul class="benefits-list">${beneficiosHTML}</ul><a href="${whatsappBaseLink}?text=Olá! Quero comprar ${plano.nome} por R$${plano.preco}" class="btn btn-business">Comprar Créditos</a></div>`;
+        });
+
+        generateHTML('business-benefits-container', data.business_benefits, benefit => `<div class="plan-card"><h4 class="plan-name" style="text-align:center;"><i class="${benefit.icon}"></i><br>${benefit.title}</h4><p style="text-align:center;">${benefit.description}</p></div>`);
+        
         const howItWorksContainer = document.getElementById('how-it-works-container');
-        howItWorksContainer.innerHTML = '';
-        if (data.how_it_works_steps) {
-          data.how_it_works_steps.forEach((step, index) => {
-              howItWorksContainer.innerHTML += `<div class="step"><div class="step-number">${index + 1}</div><p>${step.text}</p></div>`;
-          });
+        if (howItWorksContainer && data.how_it_works_steps) {
+            howItWorksContainer.innerHTML = data.how_it_works_steps.map((step, index) => `<div class="step"><div class="step-number">${index + 1}</div><p>${step.text}</p></div>`).join('');
         }
 
         document.getElementById('referral-title').textContent = data.referral_program.title;
@@ -289,18 +242,30 @@
         if (data.horario_atendimento && data.horario_atendimento.length > 0) {
             workingHoursContainer.innerHTML = '<h2>Horário de Atendimento</h2><div class="hours-grid"></div>';
             const hoursGrid = workingHoursContainer.querySelector('.hours-grid');
-            data.horario_atendimento.forEach(group => {
+            hoursGrid.innerHTML = data.horario_atendimento.map(group => {
                 const horariosHTML = group.horarios.map(h => `<div><i class="fas fa-clock"></i> ${h.horario}</div>`).join('');
-                hoursGrid.innerHTML += `<div class="hours-group"><strong><i class="${group.icone}"></i> ${group.titulo}</strong>${horariosHTML}</div>`;
-            });
+                return `<div class="hours-group"><strong><i class="${group.icone}"></i> ${group.titulo}</strong>${horariosHTML}</div>`;
+            }).join('');
         }
         
-        const socialContainer = document.getElementById('social-links-container');
-        socialContainer.innerHTML = '';
-        if (data.redes_sociais) {
-            data.redes_sociais.forEach(link => {
-                socialContainer.innerHTML += `<a href="${link.url}" target="_blank" title="${link.nome}"><i class="${link.icone}"></i></a>`;
-            });
+        generateHTML('social-links-container', data.redes_sociais, link => `<a href="${link.url}" target="_blank" title="${link.nome}"><i class="${link.icone}"></i></a>`);
+        
+        // --- Rodapé Dinâmico ---
+        const footerLogoContainer = document.getElementById('footer-logo-container');
+        if (data.footer && data.footer.logo_url) {
+            footerLogoContainer.innerHTML = `<img src="${data.footer.logo_url}" alt="Logótipo Troço Net" style="max-height: 40px;">`;
+        } else if (data.footer && data.footer.logo_text) {
+            footerLogoContainer.innerHTML = `${data.footer.logo_text}<span>NET</span>`;
+        }
+
+        const footerCopyright = document.getElementById('footer-copyright-text');
+        if (footerCopyright && data.footer) {
+            footerCopyright.textContent = data.footer.copyright_text;
+        }
+
+        const footerCredit = document.getElementById('footer-credit-container');
+        if (footerCredit && data.footer && data.footer.credit_text) {
+            footerCredit.innerHTML = `${data.footer.credit_text.replace('Troço Dev', `<a href="${data.footer.credit_link}" target="_blank" rel="noopener noreferrer">Troço Dev</a>`)}`;
         }
 
       } catch (error) {

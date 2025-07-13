@@ -40,7 +40,7 @@ collections:
             fields:
               - { label: "Cor Principal", name: "primaria", widget: "color" }
               - { label: "Cor Principal Escura (para hover)", name: "primaria_escura", widget: "color" }
-              - { label: "Cor Secundária (Rosa Claro)", name: "secundaria", widget: "color" }
+              - { label: "Cor Secundária", name: "secundaria", widget: "color" }
           - label: "Links Gerais"
             name: "links"
             widget: "object"
@@ -67,9 +67,28 @@ collections:
               - { label: "Nome da Rede", name: "nome", widget: "string" }
               - { label: "Link Completo (URL)", name: "url", widget: "string" }
               - { label: "Ícone (ex: fab fa-instagram)", name: "icone", widget: "string" }
+          - label: "Secção 'Como Funciona'"
+            name: "how_it_works_steps"
+            widget: "list"
+            summary: "{{fields.text}}"
+            fields:
+              - { label: "Texto do Passo", name: "text", widget: "string" }
+          - label: "Secção 'Experimente Grátis'"
+            name: "free_trial"
+            widget: "object"
+            fields:
+              - { label: "Título", name: "title", widget: "string" }
+              - { label: "Texto Descritivo", name: "text", widget: "string" }
+          - label: "Programa de Indicação"
+            name: "referral_program"
+            widget: "object"
+            fields:
+              - { label: "Título", name: "title", widget: "string" }
+              - { label: "Slogan", name: "tagline", widget: "string" }
           - label: "Planos Pessoais"
             name: "planos_pessoais"
             widget: "list"
+            summary: "{{fields.nome}} - R$ {{fields.preco}}"
             fields:
               - { label: "Nome", name: "nome", widget: "string" }
               - { label: "Preço", name: "preco", widget: "number" }
@@ -78,6 +97,7 @@ collections:
           - label: "Planos de Revenda (Mensal)"
             name: "planos_revenda_mensal"
             widget: "list"
+            summary: "{{fields.nome}} - R$ {{fields.preco}}"
             fields:
               - { label: "Nome", name: "nome", widget: "string" }
               - { label: "Preço", name: "preco", widget: "number" }
@@ -85,6 +105,7 @@ collections:
           - label: "Planos de Revenda (Créditos)"
             name: "planos_revenda_creditos"
             widget: "list"
+            summary: "{{fields.nome}} - R$ {{fields.preco}}"
             fields:
               - { label: "Nome", name: "nome", widget: "string" }
               - { label: "Preço", name: "preco", widget: "number" }

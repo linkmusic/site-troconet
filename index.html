@@ -153,7 +153,6 @@
       <div id="how-it-works-section" class="section">
         <div class="how-it-works">
           <h2>Como Funciona?</h2>
-          <p class="section-description">É simples, rápido e seguro. Siga os passos abaixo e comece a navegar sem limites em poucos minutos.</p>
           <div id="how-it-works-container" class="steps"></div>
         </div>
       </div>
@@ -166,8 +165,8 @@
       </div>
       
       <div id="free-trial-section" class="section">
-          <h2>Experimente Grátis</h2>
-          <p class="section-description">Oferecemos 1 hora de internet ilimitada gratuita para você testar nossa qualidade antes de assinar qualquer plano!</p>
+          <h2 id="free-trial-title"></h2>
+          <p id="free-trial-text" class="section-description"></p>
           <a id="whatsapp-link-teste-gratis" href="" class="btn btn-outline" style="max-width: 250px; margin: 0 auto;">Pedir Teste Grátis</a>
       </div>
       
@@ -200,12 +199,12 @@
         if (!response.ok) throw new Error(`Erro de rede: ${response.statusText}`);
         const data = await response.json();
 
-        // --- Atualizações Gerais ---
         if (data.cores) {
           document.documentElement.style.setProperty('--primary', data.cores.primaria);
           document.documentElement.style.setProperty('--primary-dark', data.cores.primaria_escura);
           document.documentElement.style.setProperty('--secondary', data.cores.secundaria);
         }
+
         document.getElementById('hero-title').textContent = data.hero_title;
         document.getElementById('hero-tagline').textContent = data.hero_tagline;
         document.getElementById('intro-text').innerHTML = data.intro_text;
@@ -216,7 +215,6 @@
         document.getElementById('whatsapp-link-indicacao').href = `${whatsappBaseLink}?text=Olá! Quero participar do Programa de Indicação da Troço Net.`;
         document.getElementById('whatsapp-link-teste-gratis').href = `${whatsappBaseLink}?text=Olá! Quero fazer o teste grátis de 1 hora.`;
         
-        // --- Visibilidade das Secções ---
         if (data.visibility) {
             document.getElementById('reseller-section').style.display = data.visibility.reseller_section ? 'block' : 'none';
             document.getElementById('referral-section').style.display = data.visibility.referral_program ? 'block' : 'none';
@@ -224,15 +222,10 @@
             document.getElementById('free-trial-section').style.display = data.visibility.free_trial_section ? 'block' : 'none';
         }
 
-        // --- Geração de Conteúdo Dinâmico ---
         const generateHTML = (containerId, dataArray, htmlTemplate) => {
           const container = document.getElementById(containerId);
           if (!container) return;
-          if (dataArray && dataArray.length > 0) {
-            container.innerHTML = dataArray.map(htmlTemplate).join('');
-          } else {
-            container.innerHTML = '';
-          }
+          container.innerHTML = (dataArray && dataArray.length > 0) ? dataArray.map(htmlTemplate).join('') : '';
         };
 
         generateHTML('plans-grid-pessoal', data.planos_pessoais, plano => {
@@ -256,11 +249,14 @@
             howItWorksContainer.innerHTML = data.how_it_works_steps.map((step, index) => `<div class="step"><div class="step-number">${index + 1}</div><p>${step.text}</p></div>`).join('');
         }
 
-        const referralTitle = document.getElementById('referral-title');
-        const referralTagline = document.getElementById('referral-tagline');
+        if (data.free_trial) {
+            document.getElementById('free-trial-title').textContent = data.free_trial.title;
+            document.getElementById('free-trial-text').textContent = data.free_trial.text;
+        }
+
         if (data.referral_program) {
-            if(referralTitle) referralTitle.textContent = data.referral_program.title;
-            if(referralTagline) referralTagline.textContent = data.referral_program.tagline;
+            document.getElementById('referral-title').textContent = data.referral_program.title;
+            document.getElementById('referral-tagline').textContent = data.referral_program.tagline;
         }
 
         const workingHoursContainer = document.getElementById('working-hours-container');

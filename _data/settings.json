@@ -29,6 +29,14 @@
       "titulo": "Segunda a Sexta",
       "icone": "fas fa-calendar-day",
       "horarios": [
+        { "horario": "05h às 06h30" },
+        { "horario": "18h às 21h" }
+      ]
+    },
+    {
+      "titulo": "Sábado e Domingo",
+      "icone": "fas fa-calendar-weekend",
+      "horarios": [
         { "horario": "08h às 21h" }
       ]
     }
@@ -38,8 +46,38 @@
       "nome": "Instagram",
       "url": "https://www.instagram.com/trocodigital",
       "icone": "fab fa-instagram"
+    },
+    {
+      "nome": "Facebook",
+      "url": "https://www.facebook.com/trocodigital",
+      "icone": "fab fa-facebook-f"
+    },
+    {
+      "nome": "Telegram",
+      "url": "https://t.me/trocodigital",
+      "icone": "fab fa-telegram"
+    },
+    {
+      "nome": "TikTok",
+      "url": "https://www.tiktok.com/@trocodigital",
+      "icone": "fab fa-tiktok"
+    },
+    {
+      "nome": "Kwai",
+      "url": "https://k.kwai.com/u/@trocodigitaloficial",
+      "icone": "fas fa-play"
     }
   ],
+  "how_it_works_steps": [
+    { "text": "Escolha seu plano preferido" },
+    { "text": "Faça o pagamento via PIX" },
+    { "text": "Envie o comprovante" },
+    { "text": "Receba as configurações" }
+  ],
+  "free_trial": {
+    "title": "Experimente Grátis",
+    "text": "Oferecemos 1 hora de internet ilimitada gratuita para você testar nossa qualidade antes de assinar qualquer plano!"
+  },
   "referral_program": {
     "title": "📢 Programa de Indicação Troço Net",
     "tagline": "Indique e GANHE! 😍"

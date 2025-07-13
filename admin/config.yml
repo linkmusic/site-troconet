@@ -43,7 +43,9 @@ collections:
               - label: "Horários"
                 name: "horarios"
                 widget: "list"
-                field: { label: "Horário (ex: 08h às 21h)", name: "horario", widget: "string" }
+                # A CORREÇÃO ESTÁ AQUI: 'field' foi mudado para 'fields'
+                fields: 
+                  - { label: "Horário (ex: 08h às 21h)", name: "horario", widget: "string" }
           - label: "Redes Sociais"
             name: "redes_sociais"
             widget: "list"

@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    /* --- DESIGN ATUALIZADO (PROFISSIONAL V2) --- */
+    /* --- DESIGN ATUALIZADO (PROFISSIONAL V2.1) --- */
 
     :root {
       --primary: #5D50FE;
@@ -92,9 +92,9 @@
     .pix-key { font-size: 1.1rem; font-weight: 600; background: var(--secondary); padding: 16px; border-radius: 12px; display: inline-block; margin: 16px 0; word-break: break-all; border: 1px solid #E5E7EB; }
     .note { color: var(--gray); }
     .hours-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px; margin-top: 24px; }
-    .hours-group { background: var(--secondary); padding: 24px; border-radius: 12px; text-align: left; }
-    .hours-group strong { display: flex; align-items: center; gap: 10px; font-size: 1.1rem; color: var(--dark); margin-bottom: 1rem; }
-    .hours-group div { display: flex; align-items: center; gap: 8px; color: var(--gray); }
+    .hours-group { background: var(--secondary); padding: 24px; border-radius: 12px; text-align: center; } /* Alterado para center */
+    .hours-group strong { display: flex; align-items: center; gap: 10px; font-size: 1.1rem; color: var(--dark); margin-bottom: 1rem; justify-content: center; } /* Adicionado justify-content */
+    .hours-group div { display: flex; align-items: center; gap: 8px; color: var(--gray); justify-content: center; } /* Adicionado justify-content */
     
     /* --- Rodapé e Links Sociais --- */
     .social-links { display: flex; justify-content: center; gap: 16px; }
@@ -159,12 +159,12 @@
           <h2 id="referral-title"></h2>
           <p id="referral-tagline" class="section-description"></p>
           <div class="plans-grid">
-            <div class="benefit-card" style="text-align: center;">
-              <div class="benefit-icon" style="background-color: #28a745;"><i class="fas fa-money-bill-wave"></i></div>
+            <div class="benefit-card" style="text-align: center; border: 1px solid #E5E7EB; padding: 24px; border-radius: 16px;">
+              <div class="benefit-icon" style="background-color: #28a745; width: 50px; height: 50px; font-size: 1.2rem;"><i class="fas fa-money-bill-wave"></i></div>
               <h3>R$5 no PIX</h3><p>Por cada ativação</p>
             </div>
-            <div class="benefit-card" style="text-align: center;">
-              <div class="benefit-icon" style="background-color: var(--primary);"><i class="fas fa-gift"></i></div>
+            <div class="benefit-card" style="text-align: center; border: 1px solid #E5E7EB; padding: 24px; border-radius: 16px;">
+              <div class="benefit-icon" style="background-color: var(--primary); width: 50px; height: 50px; font-size: 1.2rem;"><i class="fas fa-gift"></i></div>
               <h3>1 Mês Grátis</h3><p>De internet ilimitada</p>
             </div>
           </div>
@@ -187,7 +187,8 @@
         <p class="note"><i class="fas fa-info-circle"></i> Envie o comprovante para: <strong id="pix-contact"></strong></p>
       </div>
       
-      <div id="working-hours-container" class="section working-hours"></div>
+      <div id="working-hours-container" class="section working-hours">
+          </div>
 
     </div>
     
@@ -233,37 +234,47 @@
 
         const plansGridPessoal = document.getElementById('plans-grid-pessoal');
         plansGridPessoal.innerHTML = '';
-        data.planos_pessoais.forEach(plano => {
-          const popularClass = plano.popular ? 'popular' : '';
-          const precoPartes = parseFloat(plano.preco).toFixed(2).split('.');
-          plansGridPessoal.innerHTML += `<div class="plan-card ${popularClass}"><div class="plan-name">${plano.nome}</div><div class="plan-price"><span class="currency">R$</span><span class="integer">${precoPartes[0]}</span><span class="decimal">,${precoPartes[1]}</span></div><div class="plan-duration">${plano.duracao}</div><ul class="benefits-list"><li>Velocidade 4G/5G</li><li>Uso ilimitado</li><li>Suporte especializado</li><li>Configuração fácil</li></ul><a href="${whatsappBaseLink}?text=Olá! Quero assinar o Plano ${plano.nome} de R$${plano.preco.toFixed(2)}" class="btn">Assinar Agora</a></div>`;
-        });
+        if (data.planos_pessoais) {
+          data.planos_pessoais.forEach(plano => {
+            const popularClass = plano.popular ? 'popular' : '';
+            const precoPartes = parseFloat(plano.preco).toFixed(2).split('.');
+            plansGridPessoal.innerHTML += `<div class="plan-card ${popularClass}"><div class="plan-name">${plano.nome}</div><div class="plan-price"><span class="currency">R$</span><span class="integer">${precoPartes[0]}</span><span class="decimal">,${precoPartes[1]}</span></div><div class="plan-duration">${plano.duracao}</div><ul class="benefits-list"><li>Velocidade 4G/5G</li><li>Uso ilimitado</li><li>Suporte especializado</li><li>Configuração fácil</li></ul><a href="${whatsappBaseLink}?text=Olá! Quero assinar o Plano ${plano.nome} de R$${plano.preco.toFixed(2)}" class="btn">Assinar Agora</a></div>`;
+          });
+        }
 
         const plansGridMensal = document.getElementById('plans-grid-revenda-mensal');
         plansGridMensal.innerHTML = '';
-        data.planos_revenda_mensal.forEach(plano => {
-          const beneficiosHTML = plano.beneficios.split(';').map(b => `<li>${b.trim()}</li>`).join('');
-          plansGridMensal.innerHTML += `<div class="plan-card business"><div class="plan-name">${plano.nome}</div><div class="plan-price"><span class="currency">R$</span><span class="integer">${parseInt(plano.preco)}</span><span class="decimal">,00/mês</span></div><ul class="benefits-list">${beneficiosHTML}</ul><a href="${whatsappBaseLink}?text=Olá! Quero assinar o plano de revenda de ${plano.nome} por R$${plano.preco}/mês" class="btn btn-business">Assinar Mensal</a></div>`;
-        });
+        if (data.planos_revenda_mensal) {
+          data.planos_revenda_mensal.forEach(plano => {
+            const beneficiosHTML = plano.beneficios.split(';').map(b => `<li>${b.trim()}</li>`).join('');
+            plansGridMensal.innerHTML += `<div class="plan-card business"><div class="plan-name">${plano.nome}</div><div class="plan-price"><span class="currency">R$</span><span class="integer">${parseInt(plano.preco)}</span><span class="decimal">,00/mês</span></div><ul class="benefits-list">${beneficiosHTML}</ul><a href="${whatsappBaseLink}?text=Olá! Quero assinar o plano de revenda de ${plano.nome} por R$${plano.preco}/mês" class="btn btn-business">Assinar Mensal</a></div>`;
+          });
+        }
 
         const plansGridCreditos = document.getElementById('plans-grid-revenda-creditos');
         plansGridCreditos.innerHTML = '';
-        data.planos_revenda_creditos.forEach(plano => {
-          const beneficiosHTML = plano.beneficios.split(';').map(b => `<li>${b.trim()}</li>`).join('');
-          plansGridCreditos.innerHTML += `<div class="plan-card business"><div class="plan-name">${plano.nome}</div><div class="plan-price"><span class="currency">R$</span><span class="integer">${parseInt(plano.preco)}</span><span class="decimal">,00</span></div><ul class="benefits-list">${beneficiosHTML}</ul><a href="${whatsappBaseLink}?text=Olá! Quero comprar ${plano.nome} por R$${plano.preco}" class="btn btn-business">Comprar Créditos</a></div>`;
-        });
+        if (data.planos_revenda_creditos) {
+          data.planos_revenda_creditos.forEach(plano => {
+            const beneficiosHTML = plano.beneficios.split(';').map(b => `<li>${b.trim()}</li>`).join('');
+            plansGridCreditos.innerHTML += `<div class="plan-card business"><div class="plan-name">${plano.nome}</div><div class="plan-price"><span class="currency">R$</span><span class="integer">${parseInt(plano.preco)}</span><span class="decimal">,00</span></div><ul class="benefits-list">${beneficiosHTML}</ul><a href="${whatsappBaseLink}?text=Olá! Quero comprar ${plano.nome} por R$${plano.preco}" class="btn btn-business">Comprar Créditos</a></div>`;
+          });
+        }
         
         const businessBenefitsContainer = document.getElementById('business-benefits-container');
         businessBenefitsContainer.innerHTML = '';
-        data.business_benefits.forEach(benefit => {
-            businessBenefitsContainer.innerHTML += `<div class="plan-card"><h4 class="plan-name"><i class="${benefit.icon}"></i> ${benefit.title}</h4><p>${benefit.description}</p></div>`;
-        });
+        if (data.business_benefits) {
+          data.business_benefits.forEach(benefit => {
+              businessBenefitsContainer.innerHTML += `<div class="plan-card"><h4 class="plan-name" style="text-align:center;"><i class="${benefit.icon}"></i><br>${benefit.title}</h4><p style="text-align:center;">${benefit.description}</p></div>`;
+          });
+        }
 
         const howItWorksContainer = document.getElementById('how-it-works-container');
         howItWorksContainer.innerHTML = '';
-        data.how_it_works_steps.forEach((step, index) => {
-            howItWorksContainer.innerHTML += `<div class="step"><div class="step-number">${index + 1}</div><p>${step.text}</p></div>`;
-        });
+        if (data.how_it_works_steps) {
+          data.how_it_works_steps.forEach((step, index) => {
+              howItWorksContainer.innerHTML += `<div class="step"><div class="step-number">${index + 1}</div><p>${step.text}</p></div>`;
+          });
+        }
 
         document.getElementById('referral-title').textContent = data.referral_program.title;
         document.getElementById('referral-tagline').textContent = data.referral_program.tagline;

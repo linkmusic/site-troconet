@@ -1,137 +1,154 @@
-{
-  "intro_text": "Navegue <strong class=\"highlight\">sem limites</strong> com nossos planos de internet ilimitada compatíveis com as principais operadoras do Brasil. <strong>Rápido, estável e sem bloqueios!</strong>",
-  "referral_program": {
-    "title": "📢 Programa de Indicação Troço Net",
-    "tagline": "Indique e GANHE! 😍"
-  },
-  "planos_pessoais": [
-    {
-      "popular": false,
-      "nome": "Diário",
-      "preco": 1,
-      "duracao": "1 dia de internet ilimitada"
-    },
-    {
-      "popular": false,
-      "nome": "Semanal",
-      "preco": 5,
-      "duracao": "7 dias de internet ilimitada"
-    },
-    {
-      "nome": "Mensal",
-      "preco": 10,
-      "duracao": "30 dias de internet ilimitada",
-      "popular": false
-    },
-    {
-      "nome": "Trimestral",
-      "preco": 15,
-      "duracao": "90 dias de internet ilimitada",
-      "popular": false
-    },
-    {
-      "nome": "Semestral",
-      "preco": 20,
-      "duracao": "180 dias de internet ilimitada",
-      "popular": false
-    },
-    {
-      "nome": "Anual",
-      "preco": 25,
-      "duracao": "365 dias de internet ilimitada",
-      "popular": true
-    }
-  ],
-  "free_trial": {
-    "title": "Experimente Grátis",
-    "text": "Oferecemos 1 hora de internet ilimitada gratuita para você testar nossa qualidade antes de assinar qualquer plano!"
-  },
-  "how_it_works_steps": [
-    {
-      "text": "Escolha seu plano preferido"
-    },
-    {
-      "text": "Faça o pagamento via PIX"
-    },
-    {
-      "text": "Envie o comprovante"
-    },
-    {
-      "text": "Receba as configurações"
-    }
-  ],
-  "redes_sociais": [
-    {
-      "nome": "Instagram",
-      "url": "https://www.instagram.com/trocodigital",
-      "icone": "fab fa-instagram"
-    }
-  ],
-  "hero_tagline": "Internet ilimitada 4G/5G para Android",
-  "planos_revenda_mensal": [
-    {
-      "nome": "100 Logins",
-      "preco": 60,
-      "beneficios": "100 acessos simultâneos;Painel básico;Suporte padrão"
-    },
-    {
-      "nome": "200 Logins",
-      "preco": 70,
-      "beneficios": "200 acessos simultâneos;Painel básico;Suporte prioritário"
-    },
-    {
-      "nome": "300 Logins",
-      "preco": 120,
-      "beneficios": "300 acessos simultâneos;Painel premium;Suporte prioritário"
-    },
-    {
-      "nome": "1.000 Logins",
-      "preco": 140,
-      "beneficios": "1.000 acessos simultâneos;Painel premium;Suporte dedicado;Melhor custo-benefício"
-    },
-    {
-      "nome": "2.000 Logins",
-      "preco": 180,
-      "beneficios": "2.000 acessos simultâneos;Painel premium;Suporte dedicado;Conta master"
-    },
-    {
-      "nome": "10.000 Logins",
-      "preco": 240,
-      "beneficios": "10.000 acessos simultâneos;Painel empresarial;Suporte 24/7;Conta master"
-    }
-  ],
-  "visibility": {
-    "reseller_section": true,
-    "referral_program": true,
-    "how_it_works_section": true,
-    "free_trial_section": true
-  },
-  "horario_atendimento": [
-    {
-      "titulo": "Segunda a Domingo",
-      "icone": "fas fa-calendar-day",
-      "horarios": [
-        {
-          "horario": "08h às 21h"
-        }
-      ]
-    }
-  ],
-  "hero_title": "Troço Net",
-  "cores": {
-    "primaria": "#e13f8f",
-    "primaria_escura": "#000000",
-    "secundaria": "#ffffff"
-  },
-  "links": {
-    "whatsapp": "https://wa.me/558481518164",
-    "whatsapp_number": "(84) 8151-8164",
-    "telegram": "https://t.me/suporte_trocodigital",
-    "pix_key": "CHAMA O SUPORTE"
-  },
-  "footer": {
-    "logo_url": "",
-    "logo_text": "TROÇO",
-    "copyright_text": "Conectando você ao que importa. © 2025 Troço Net - Todos os direitos reservados."
-  }
-}
+backend:
+  name: git-gateway
+  branch: main
+
+site_url: https://troconet.shop
+
+# As pastas de mídia para o upload de imagens
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+# Coleções de conteúdo editável
+collections:
+  - name: "configuracoes"
+    label: "Configurações do Site"
+    description: "Edite aqui todos os textos, preços e links do site."
+    files:
+      - name: "geral"
+        label: "Opções Gerais e Textos"
+        file: "_data/settings.json"
+        fields:
+          - label: "Título Principal"
+            name: "hero_title"
+            widget: "string"
+          - label: "Slogan abaixo do Título"
+            name: "hero_tagline"
+            widget: "string"
+          - label: "Texto de Introdução"
+            name: "intro_text"
+            widget: "text"
+          - label: "Rodapé"
+            name: "footer"
+            widget: "object"
+            fields:
+              - label: "URL do Logótipo (opcional)"
+                name: "logo_url"
+                widget: "image"
+                required: false
+              - label: "Texto do Logótipo (se não usar imagem)"
+                name: "logo_text"
+                widget: "string"
+              - label: "Texto de Copyright"
+                name: "copyright_text"
+                widget: "string"
+          - label: "Visibilidade das Secções"
+            name: "visibility"
+            widget: "object"
+            fields:
+              - label: "Mostrar Secção de Revenda?"
+                name: "reseller_section"
+                widget: "boolean"
+                default: true
+              - label: "Mostrar Programa de Indicação?"
+                name: "referral_program"
+                widget: "boolean"
+                default: true
+              - label: "Mostrar Secção 'Como Funciona'?"
+                name: "how_it_works_section"
+                widget: "boolean"
+                default: true
+              - label: "Mostrar Secção 'Experimente Grátis'?"
+                name: "free_trial_section"
+                widget: "boolean"
+                default: true
+          - label: "Cores do Site"
+            name: "cores"
+            widget: "object"
+            fields:
+              - { label: "Cor Principal", name: "primaria", widget: "color" }
+              - { label: "Cor Principal Escura (para hover)", name: "primaria_escura", widget: "color" }
+              - { label: "Cor Secundária", name: "secundaria", widget: "color" }
+          - label: "Links Gerais"
+            name: "links"
+            widget: "object"
+            fields:
+              - { label: "Link de Contacto WhatsApp", name: "whatsapp", widget: "string" }
+              - { label: "Número de Telefone (para texto)", name: "whatsapp_number", widget: "string" }
+              - { label: "Link de Suporte Telegram", name: "telegram", widget: "string" }
+              - { label: "Chave PIX", name: "pix_key", widget: "string" }
+          - label: "Horário de Atendimento"
+            name: "horario_atendimento"
+            widget: "list"
+            fields:
+              - label: "Título (ex: Segunda a Sexta)"
+                name: "titulo"
+                widget: "string"
+              - label: "Ícone do Título (ex: fas fa-calendar-day)"
+                name: "icone"
+                widget: "string"
+              - label: "Horários"
+                name: "horarios"
+                widget: "list"
+                fields: 
+                  - { label: "Horário (ex: 08h às 21h)", name: "horario", widget: "string" }
+          - label: "Redes Sociais"
+            name: "redes_sociais"
+            widget: "list"
+            fields:
+              - { label: "Nome da Rede", name: "nome", widget: "string" }
+              - { label: "Link Completo (URL)", name: "url", widget: "string" }
+              - { label: "Ícone (ex: fab fa-instagram)", name: "icone", widget: "string" }
+          - label: "Secção 'Como Funciona'"
+            name: "how_it_works_steps"
+            widget: "list"
+            summary: "{{fields.text}}"
+            fields:
+              - { label: "Texto do Passo", name: "text", widget: "string" }
+          - label: "Secção 'Experimente Grátis'"
+            name: "free_trial"
+            widget: "object"
+            fields:
+              - { label: "Título", name: "title", widget: "string" }
+              - { label: "Texto Descritivo", name: "text", widget: "string" }
+          - label: "Programa de Indicação"
+            name: "referral_program"
+            widget: "object"
+            fields:
+              - { label: "Título", name: "title", widget: "string" }
+              - { label: "Slogan", name: "tagline", widget: "string" }
+          - label: "Planos Pessoais"
+            name: "planos_pessoais"
+            widget: "list"
+            summary: "{{fields.nome}} - R$ {{fields.preco}}"
+            fields:
+              - label: "Nome"
+                name: "nome"
+                widget: "string"
+              - label: "Preço"
+                name: "preco"
+                widget: "number"
+                value_type: "float" # Permite números decimais como 9.99
+                step: 0.01 # Define o incremento para os botões de aumentar/diminuir
+              - label: "Duração"
+                name: "duracao"
+                widget: "string"
+              - label: "Popular?"
+                name: "popular"
+                widget: "boolean"
+                default: false
+          - label: "Planos de Revenda (Mensal)"
+            name: "planos_revenda_mensal"
+            widget: "list"
+            summary: "{{fields.nome}} - R$ {{fields.preco}}"
+            fields:
+              - label: "Nome"
+                name: "nome"
+                widget: "string"
+              - label: "Preço"
+                name: "preco"
+                widget: "number"
+                value_type: "float" # Permite números decimais
+                step: 0.01
+              - label: "Benefícios (separados por ';')"
+                name: "beneficios"
+                widget: "string"

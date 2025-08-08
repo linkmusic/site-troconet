@@ -11,9 +11,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #6A11CB;
-            --primary-light: #9B59B6;
-            --secondary: #2575FC;
+            --primary: #E13F8F;
+            --secondary: #B93074;
             --bg-dark: #121212;
             --bg-light: #1E1E1E;
             --text-light: #E0E0E0;
@@ -24,16 +23,8 @@
             --font-body: 'Poppins', sans-serif;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
         body {
             background-color: var(--bg-dark);
             color: var(--text-light);
@@ -58,22 +49,6 @@
             overflow: hidden;
         }
         
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255,255,255,0.05) 10%, transparent 40%);
-            animation: rotate 20s linear infinite;
-        }
-
-        @keyframes rotate {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-
         h1 {
             font-family: var(--font-display);
             font-size: clamp(2.5rem, 5vw, 4rem);
@@ -106,9 +81,7 @@
             box-shadow: 0 8px 25px var(--shadow-color);
         }
         
-        .section {
-            margin-bottom: 100px;
-        }
+        .section { margin-bottom: 100px; }
         
         h2 {
             font-family: var(--font-display);
@@ -201,9 +174,7 @@
             gap: 12px;
         }
         
-        .benefits-list li i {
-            color: var(--secondary);
-        }
+        .benefits-list li i { color: var(--primary); }
 
         .btn-plan {
             width: 100%;
@@ -212,15 +183,39 @@
             color: #FFF;
         }
         
-        .btn-plan:hover {
-            color: #FFF;
-        }
+        .btn-plan:hover { color: #FFF; }
         
         .feature-box {
             background: var(--bg-light);
             border: 1px solid var(--border-color);
             border-radius: 16px;
             padding: 40px;
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            text-align: left;
+        }
+
+        .step-card {
+            background-color: var(--bg-dark);
+            padding: 25px;
+            border-radius: 12px;
+            border-left: 3px solid var(--primary);
+        }
+        
+        .step-card h3 {
+            font-family: var(--font-display);
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-light);
+        }
+        
+        .step-card p {
+            color: var(--text-dark);
+            font-size: 1rem;
         }
 
         footer {
@@ -235,9 +230,7 @@
             margin-bottom: 1rem;
         }
         
-        .social-links {
-            margin: 20px 0;
-        }
+        .social-links { margin: 20px 0; }
         
         .social-links a {
             color: var(--text-dark);
@@ -246,20 +239,13 @@
             transition: color 0.3s ease;
         }
         
-        .social-links a:hover {
-            color: var(--primary);
-        }
-        
-        .copyright {
-            font-size: 0.9rem;
-            color: var(--text-dark);
-        }
+        .social-links a:hover { color: var(--primary); }
+        .copyright { font-size: 0.9rem; color: var(--text-dark); }
     </style>
 </head>
 <body>
 
     <div class="container">
-
         <header class="hero">
             <h1 id="hero-title"></h1>
             <p id="hero-tagline" class="hero-tagline"></p>
@@ -283,7 +269,7 @@
                 <div class="feature-box">
                     <h2>Como Funciona?</h2>
                     <p class="section-description">Contratar é simples, rápido e seguro. Siga os passos e comece a navegar sem limites.</p>
-                    <div id="how-it-works-container" class="plans-grid"></div>
+                    <div id="how-it-works-container" class="steps-grid"></div>
                 </div>
             </section>
         </main>
@@ -293,7 +279,6 @@
             <div id="social-links-container" class="social-links"></div>
             <p id="footer-copyright" class="copyright"></p>
         </footer>
-
     </div>
 
     <script>
@@ -311,19 +296,22 @@
                 const pessoalContainer = document.getElementById('plans-grid-pessoal');
                 if (pessoalContainer && data.planos_pessoais) {
                     pessoalContainer.innerHTML = data.planos_pessoais.map(plano => {
-                        const preco = parseFloat(plano.preco).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+                        const precoFormatado = parseFloat(plano.preco).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+                        const mensagem = `Olá! Tenho interesse no Plano ${plano.nome} da Troço Net, no valor de ${precoFormatado}.`;
+                        const linkWhatsapp = `${data.links.whatsapp}?text=${encodeURIComponent(mensagem)}`;
+                        
                         return `
                             <div class="plan-card ${plano.popular ? 'popular' : ''}">
                                 ${plano.popular ? '<div class="popular-badge">POPULAR</div>' : ''}
                                 <h3 class="plan-name">${plano.nome}</h3>
-                                <div class="plan-price">${preco}</div>
+                                <div class="plan-price">${precoFormatado}</div>
                                 <p class="plan-duration">${plano.duracao}</p>
                                 <ul class="benefits-list">
                                     <li><i class="fas fa-check-circle"></i>Velocidade 4G/5G</li>
                                     <li><i class="fas fa-check-circle"></i>Uso ilimitado</li>
                                     <li><i class="fas fa-check-circle"></i>Suporte especializado</li>
                                 </ul>
-                                <a href="${data.links.whatsapp}?text=Olá! Quero o Plano ${plano.nome}" class="btn btn-plan">Contratar</a>
+                                <a href="${linkWhatsapp}" class="btn btn-plan">Contratar</a>
                             </div>`;
                     }).join('');
                 }
@@ -332,14 +320,17 @@
                 const revendaContainer = document.getElementById('plans-grid-revenda');
                 if (revendaContainer && data.planos_revenda_mensal) {
                     revendaContainer.innerHTML = data.planos_revenda_mensal.map(plano => {
-                        const preco = parseFloat(plano.preco).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+                        const precoFormatado = parseFloat(plano.preco).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+                        const mensagem = `Olá! Tenho interesse no plano de revenda ${plano.nome} da Troço Net, no valor de ${precoFormatado}/mês.`;
+                        const linkWhatsapp = `${data.links.whatsapp}?text=${encodeURIComponent(mensagem)}`;
                         const beneficiosHTML = plano.beneficios.split(';').map(b => `<li><i class="fas fa-check-circle"></i>${b.trim()}</li>`).join('');
+
                         return `
                             <div class="plan-card">
                                 <h3 class="plan-name">${plano.nome}</h3>
-                                <div class="plan-price">${preco}<span class="decimal">/mês</span></div>
+                                <div class="plan-price">${precoFormatado}<span class="decimal">/mês</span></div>
                                 <ul class="benefits-list">${beneficiosHTML}</ul>
-                                <a href="${data.links.whatsapp}?text=Olá! Tenho interesse no plano de revenda ${plano.nome}" class="btn btn-plan">Seja Revendedor</a>
+                                <a href="${linkWhatsapp}" class="btn btn-plan">Seja Revendedor</a>
                             </div>`;
                     }).join('');
                 }
@@ -349,7 +340,7 @@
                 if (howItWorksContainer && data.how_it_works_steps) {
                     howItWorksContainer.innerHTML = data.how_it_works_steps.map((step, index) => `
                         <div class="step-card">
-                            <h3>${index + 1}. ${step.title}</h3>
+                            <h3>Passo ${index + 1}</h3>
                             <p>${step.text}</p>
                         </div>
                     `).join('');

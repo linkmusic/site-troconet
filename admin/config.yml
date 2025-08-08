@@ -38,8 +38,7 @@ collections:
             name: "how_it_works_steps"
             widget: "list"
             fields:
-              - { label: "Título do Passo", name: "title", widget: "string" }
-              - { label: "Descrição do Passo", name: "text", widget: "string" }
+              - { label: "Texto do Passo", name: "text", widget: "string" }
           - label: "Planos Pessoais"
             name: "planos_pessoais"
             widget: "list"

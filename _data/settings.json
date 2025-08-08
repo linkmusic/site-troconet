@@ -31,7 +31,7 @@
     },
     {
       "nome": "Semestral",
-      "preco": 19.98,
+      "preco": 19.99,
       "duracao": "180 dias de internet ilimitada",
       "popular": false
     },
@@ -168,7 +168,7 @@
   },
   "footer": {
     "logo_url": "",
-    "logo_text": "TROÇO",
+    "logo_text": "TROÇO NET",
     "copyright_text": "Conectando você ao que importa. © 2025 Troço Net - Todos os direitos reservados."
   }
 }

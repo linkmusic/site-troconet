@@ -1,154 +1,59 @@
 backend:
   name: git-gateway
   branch: main
-
 site_url: https://troconet.shop
-
-# As pastas de mídia para o upload de imagens
 media_folder: "images/uploads"
 public_folder: "/images/uploads"
 
-# Coleções de conteúdo editável
 collections:
   - name: "configuracoes"
     label: "Configurações do Site"
-    description: "Edite aqui todos os textos, preços e links do site."
+    description: "Edite os textos, preços e links do site."
     files:
       - name: "geral"
-        label: "Opções Gerais e Textos"
+        label: "Conteúdo Principal"
         file: "_data/settings.json"
         fields:
-          - label: "Título Principal"
-            name: "hero_title"
-            widget: "string"
-          - label: "Slogan abaixo do Título"
-            name: "hero_tagline"
-            widget: "string"
-          - label: "Texto de Introdução"
-            name: "intro_text"
-            widget: "text"
+          - { label: "Título Principal", name: "hero_title", widget: "string" }
+          - { label: "Slogan (texto abaixo do título)", name: "hero_tagline", widget: "string" }
+          - label: "Links"
+            name: "links"
+            widget: "object"
+            fields:
+              - { label: "Link do WhatsApp para Contato", name: "whatsapp", widget: "string" }
           - label: "Rodapé"
             name: "footer"
             widget: "object"
             fields:
-              - label: "URL do Logótipo (opcional)"
-                name: "logo_url"
-                widget: "image"
-                required: false
-              - label: "Texto do Logótipo (se não usar imagem)"
-                name: "logo_text"
-                widget: "string"
-              - label: "Texto de Copyright"
-                name: "copyright_text"
-                widget: "string"
-          - label: "Visibilidade das Secções"
-            name: "visibility"
-            widget: "object"
-            fields:
-              - label: "Mostrar Secção de Revenda?"
-                name: "reseller_section"
-                widget: "boolean"
-                default: true
-              - label: "Mostrar Programa de Indicação?"
-                name: "referral_program"
-                widget: "boolean"
-                default: true
-              - label: "Mostrar Secção 'Como Funciona'?"
-                name: "how_it_works_section"
-                widget: "boolean"
-                default: true
-              - label: "Mostrar Secção 'Experimente Grátis'?"
-                name: "free_trial_section"
-                widget: "boolean"
-                default: true
-          - label: "Cores do Site"
-            name: "cores"
-            widget: "object"
-            fields:
-              - { label: "Cor Principal", name: "primaria", widget: "color" }
-              - { label: "Cor Principal Escura (para hover)", name: "primaria_escura", widget: "color" }
-              - { label: "Cor Secundária", name: "secundaria", widget: "color" }
-          - label: "Links Gerais"
-            name: "links"
-            widget: "object"
-            fields:
-              - { label: "Link de Contacto WhatsApp", name: "whatsapp", widget: "string" }
-              - { label: "Número de Telefone (para texto)", name: "whatsapp_number", widget: "string" }
-              - { label: "Link de Suporte Telegram", name: "telegram", widget: "string" }
-              - { label: "Chave PIX", name: "pix_key", widget: "string" }
-          - label: "Horário de Atendimento"
-            name: "horario_atendimento"
-            widget: "list"
-            fields:
-              - label: "Título (ex: Segunda a Sexta)"
-                name: "titulo"
-                widget: "string"
-              - label: "Ícone do Título (ex: fas fa-calendar-day)"
-                name: "icone"
-                widget: "string"
-              - label: "Horários"
-                name: "horarios"
-                widget: "list"
-                fields: 
-                  - { label: "Horário (ex: 08h às 21h)", name: "horario", widget: "string" }
+              - { label: "Texto do Logo no Rodapé", name: "logo_text", widget: "string" }
+              - { label: "Texto de Copyright", name: "copyright_text", widget: "string" }
           - label: "Redes Sociais"
             name: "redes_sociais"
             widget: "list"
             fields:
-              - { label: "Nome da Rede", name: "nome", widget: "string" }
+              - { label: "Nome da Rede (ex: Instagram)", name: "nome", widget: "string" }
               - { label: "Link Completo (URL)", name: "url", widget: "string" }
               - { label: "Ícone (ex: fab fa-instagram)", name: "icone", widget: "string" }
-          - label: "Secção 'Como Funciona'"
+          - label: "Passos 'Como Funciona'"
             name: "how_it_works_steps"
             widget: "list"
-            summary: "{{fields.text}}"
             fields:
-              - { label: "Texto do Passo", name: "text", widget: "string" }
-          - label: "Secção 'Experimente Grátis'"
-            name: "free_trial"
-            widget: "object"
-            fields:
-              - { label: "Título", name: "title", widget: "string" }
-              - { label: "Texto Descritivo", name: "text", widget: "string" }
-          - label: "Programa de Indicação"
-            name: "referral_program"
-            widget: "object"
-            fields:
-              - { label: "Título", name: "title", widget: "string" }
-              - { label: "Slogan", name: "tagline", widget: "string" }
+              - { label: "Título do Passo", name: "title", widget: "string" }
+              - { label: "Descrição do Passo", name: "text", widget: "string" }
           - label: "Planos Pessoais"
             name: "planos_pessoais"
             widget: "list"
             summary: "{{fields.nome}} - R$ {{fields.preco}}"
             fields:
-              - label: "Nome"
-                name: "nome"
-                widget: "string"
-              - label: "Preço"
-                name: "preco"
-                widget: "number"
-                value_type: "float" # Permite números decimais como 9.99
-                step: 0.01 # Define o incremento para os botões de aumentar/diminuir
-              - label: "Duração"
-                name: "duracao"
-                widget: "string"
-              - label: "Popular?"
-                name: "popular"
-                widget: "boolean"
-                default: false
+              - { label: "Nome do Plano", name: "nome", widget: "string" }
+              - { label: "Preço (use ponto para decimais, ex: 9.90)", name: "preco", widget: "number", value_type: "float" }
+              - { label: "Duração (ex: 30 dias)", name: "duracao", widget: "string" }
+              - { label: "É o plano mais popular?", name: "popular", widget: "boolean", default: false }
           - label: "Planos de Revenda (Mensal)"
             name: "planos_revenda_mensal"
             widget: "list"
             summary: "{{fields.nome}} - R$ {{fields.preco}}"
             fields:
-              - label: "Nome"
-                name: "nome"
-                widget: "string"
-              - label: "Preço"
-                name: "preco"
-                widget: "number"
-                value_type: "float" # Permite números decimais
-                step: 0.01
-              - label: "Benefícios (separados por ';')"
-                name: "beneficios"
-                widget: "string"
+              - { label: "Nome do Plano", name: "nome", widget: "string" }
+              - { label: "Preço (use ponto para decimais)", name: "preco", widget: "number", value_type: "float" }
+              - { label: "Benefícios (separados por ';')", name: "beneficios", widget: "string" }

@@ -1,277 +1,379 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Internet ilimitada 4G/5G para Android. Compatível com Vivo, Tim e Claro. Planos a partir de R$10/mês e opções para revendedores.">
-  <title>Troço Net - Internet Ilimitada 4G/5G para Android</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --primary: #5D50FE;
-      --primary-dark: #4539d4;
-      --secondary: #F3F4F6;
-      --accent: #7C3AED;
-      --dark: #111827;
-      --light: #FFFFFF;
-      --text: #374151;
-      --gray: #6B7280;
-      --success: #10B981;
-      --whatsapp: #25D366;
-      --telegram: #2AABEE;
-      --business: #5D50FE;
-      --font-family: 'Inter', sans-serif;
-    }
-    * { margin: 0; padding: 0; box-sizing: border-box; font-family: var(--font-family); }
-    body { background-color: var(--secondary); color: var(--text); line-height: 1.6; text-align: center; display: flex; flex-direction: column; align-items: center; padding: 24px 0; }
-    .container { max-width: 1100px; width: 100%; margin: 20px; background: var(--light); border-radius: 24px; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05); overflow: hidden; border: 1px solid #E5E7EB; }
-    .hero-container { position: relative; height: 400px; display: flex; align-items: center; justify-content: center; }
-    .hero-container img { width: 100%; height: 100%; object-fit: cover; filter: brightness(0.6); }
-    .hero-overlay { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(93, 80, 254, 0.85) 0%, rgba(124, 58, 237, 0.8) 100%); display: flex; flex-direction: column; align-items: center; justify-content: center; color: white; padding: 20px; }
-    h1 { font-size: 3.2rem; font-weight: 700; color: white; text-shadow: 0 2px 6px rgba(0,0,0,0.2); margin-bottom: 1rem; }
-    .tagline { font-size: 1.2rem; font-weight: 400; margin-bottom: 1.5rem; opacity: 0.9; color: white; max-width: 550px; }
-    .android-only { background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2); color: white; padding: 8px 16px; border-radius: 9999px; font-size: 0.9rem; font-weight: 500; backdrop-filter: blur(5px); }
-    .content { padding: 60px 40px; }
-    .section { margin-bottom: 80px; }
-    h2 { font-size: 2.5rem; color: var(--dark); margin: 0 0 1rem 0; font-weight: 700; }
-    .section-description { font-size: 1.1rem; color: var(--gray); max-width: 600px; margin: 0 auto 40px auto; }
-    .intro { font-size: 1.15rem; margin: 0 auto 50px; max-width: 700px; line-height: 1.8; color: var(--gray); }
-    .highlight { background-color: var(--secondary); padding: 2px 8px; border-radius: 6px; font-weight: 600; color: var(--primary); }
-    .plans-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 32px; margin-top: 50px; }
-    .plan-card { background: var(--light); border-radius: 16px; padding: 32px; box-shadow: 0 4px 16px rgba(0,0,0,0.05); border: 1px solid #E5E7EB; transition: all 0.3s ease; position: relative; overflow: hidden; display: flex; flex-direction: column; text-align: left; }
-    .plan-card:hover { transform: translateY(-8px); box-shadow: 0 12px 32px rgba(93, 80, 254, 0.1); border-color: var(--primary); }
-    .plan-card.popular { border: 2px solid var(--primary); transform: scale(1.03); }
-    .plan-card.popular::before { content: "MAIS POPULAR"; position: absolute; top: 16px; right: -45px; background: var(--primary); color: var(--light); padding: 6px 40px; font-size: 0.8rem; font-weight: 600; transform: rotate(45deg); }
-    .plan-name { font-size: 1.25rem; font-weight: 600; color: var(--dark); margin-bottom: 0.5rem; }
-    .plan-price { font-weight: 700; color: var(--dark); margin-bottom: 0.25rem; display: flex; align-items: baseline; gap: 4px; }
-    .plan-price .integer { font-size: 3rem; line-height: 1; }
-    .plan-price .decimal { font-size: 1.5rem; color: var(--gray); }
-    .plan-duration { color: var(--gray); margin-bottom: 24px; font-size: 1rem; }
-    .benefits-list { margin-top: auto; margin-bottom: 24px; text-align: left; list-style: none; padding: 0; }
-    .benefits-list li { margin-bottom: 12px; display: flex; align-items: center; gap: 10px; color: var(--text); }
-    .benefits-list li::before { content: "\f00c"; font-family: "Font Awesome 6 Free"; font-weight: 900; color: var(--primary); font-size: 0.9rem; }
-    .btn { display: block; width: 100%; padding: 14px 28px; background: var(--primary); color: var(--light); text-decoration: none; border-radius: 12px; font-weight: 600; transition: all 0.2s ease-in-out; border: 2px solid transparent; cursor: pointer; text-align: center; font-size: 1rem; }
-    .btn:hover { background: var(--primary-dark); transform: translateY(-2px); }
-    .btn.btn-business { background: var(--business); }
-    .btn.btn-business:hover { background: var(--primary-dark); }
-    .btn-outline { background: var(--light); color: var(--primary); border-color: var(--primary); }
-    .btn-outline:hover { background: var(--primary); color: var(--light); }
-    .pricing-tabs { display: flex; justify-content: center; margin-bottom: 40px; background: var(--secondary); border-radius: 12px; padding: 6px; }
-    .tab-btn { padding: 10px 20px; background: transparent; border: none; color: var(--gray); border-radius: 8px; font-weight: 600; cursor: pointer; transition: all 0.3s ease; font-size: 1rem; }
-    .tab-btn.active { background: var(--light); color: var(--primary); box-shadow: 0 2px 10px rgba(0,0,0,0.08); }
-    .tab-content { display: none; animation: fadeIn 0.5s ease; }
-    .business .plan-name { color: var(--dark); }
-    .compatibility { display: flex; justify-content: center; flex-wrap: wrap; gap: 24px; margin-top: 40px; }
-    .operator { display: flex; align-items: center; gap: 12px; background: var(--light); padding: 12px 24px; border-radius: 12px; border: 1px solid #E5E7EB; }
-    .operator i { font-size: 1.8rem; color: var(--primary); }
-    .operator span { font-weight: 600; color: var(--dark); }
-    .how-it-works, .working-hours, .pix-box, .referral-program { background: var(--light); padding: 40px; border-radius: 16px; border: 1px solid #E5E7EB; }
-    .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 32px; margin-top: 30px; }
-    .step { text-align: left; }
-    .step-number { width: 48px; height: 48px; background: var(--secondary); color: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.2rem; margin-bottom: 1rem; }
-    .step p { font-weight: 600; font-size: 1.1rem; }
-    .pix-key { font-size: 1.1rem; font-weight: 600; background: var(--secondary); padding: 16px; border-radius: 12px; display: inline-block; margin: 16px 0; word-break: break-all; border: 1px solid #E5E7EB; }
-    .note { color: var(--gray); }
-    .hours-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px; margin-top: 24px; }
-    .hours-group { background: var(--secondary); padding: 24px; border-radius: 12px; text-align: center; }
-    .hours-group strong { display: flex; align-items: center; gap: 10px; font-size: 1.1rem; color: var(--dark); margin-bottom: 1rem; justify-content: center; }
-    .hours-group div { display: flex; align-items: center; gap: 8px; color: var(--gray); justify-content: center; }
-    .social-links { display: flex; justify-content: center; gap: 16px; }
-    .social-links a { width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center; background: var(--secondary); color: var(--gray); font-size: 1.2rem; transition: all 0.3s ease; }
-    .social-links a:hover { background: var(--primary); color: var(--light); transform: translateY(-3px); }
-    footer { padding: 40px; background: var(--dark); color: #9CA3AF; margin-top: 40px; }
-    .footer-logo { font-size: 1.5rem; font-weight: 700; color: var(--light); margin-bottom: 1rem; }
-    .footer-logo span { color: var(--primary); }
-    .footer-logo img { max-height: 40px; }
-    .footer-info { font-size: 0.9rem; }
-    .footer-credit { margin-top: 24px; padding-top: 24px; border-top: 1px solid #374151; font-size: 0.875rem; color: var(--gray); }
-    .footer-credit a { color: var(--light); text-decoration: none; font-weight: 500; transition: color 0.3s ease; }
-    .footer-credit a:hover { color: var(--primary); }
-    @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-    @media (max-width: 768px) { h1 { font-size: 2.5rem; } h2 { font-size: 2rem; } .content { padding: 40px 20px; } .plans-grid { grid-template-columns: 1fr; max-width: 380px; } .plan-card.popular { transform: scale(1); } }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Internet ilimitada 4G/5G para Android. Planos flexíveis e suporte de qualidade.">
+    <title>Troço Net - Internet Ilimitada para Android</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #6A11CB;
+            --primary-light: #9B59B6;
+            --secondary: #2575FC;
+            --bg-dark: #121212;
+            --bg-light: #1E1E1E;
+            --text-light: #E0E0E0;
+            --text-dark: #BDBDBD;
+            --border-color: rgba(255, 255, 255, 0.1);
+            --shadow-color: rgba(0, 0, 0, 0.4);
+            --font-display: 'Space Grotesk', sans-serif;
+            --font-body: 'Poppins', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            font-family: var(--font-body);
+            line-height: 1.7;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 1200px;
+            width: 90%;
+            margin: 0 auto;
+            padding: 40px 0;
+        }
+
+        .hero {
+            padding: 120px 0;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            border-radius: 24px;
+            margin-bottom: 80px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.05) 10%, transparent 40%);
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            color: #FFF;
+            text-shadow: 0 4px 15px var(--shadow-color);
+            margin-bottom: 1rem;
+        }
+
+        .hero-tagline {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto 2rem auto;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 32px;
+            background: #FFF;
+            color: var(--primary);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px var(--shadow-color);
+        }
+
+        .btn:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 8px 25px var(--shadow-color);
+        }
+        
+        .section {
+            margin-bottom: 100px;
+        }
+        
+        h2 {
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 1rem;
+        }
+        
+        .section-description {
+            max-width: 700px;
+            margin: 0 auto 50px auto;
+            color: var(--text-dark);
+        }
+
+        .plans-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+        }
+
+        .plan-card {
+            background: var(--bg-light);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 40px;
+            text-align: left;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .plan-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .plan-card.popular {
+            border-color: var(--primary);
+            transform: scale(1.05);
+        }
+        
+        .popular-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: #FFF;
+            padding: 5px 15px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            border-radius: 50px;
+        }
+
+        .plan-name {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .plan-price {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            font-family: var(--font-display);
+        }
+
+        .plan-price .decimal {
+            font-size: 1.5rem;
+            color: var(--text-dark);
+        }
+        
+        .plan-duration {
+            color: var(--text-dark);
+            margin-bottom: 24px;
+        }
+
+        .benefits-list {
+            list-style: none;
+            margin-bottom: 32px;
+            flex-grow: 1;
+        }
+        
+        .benefits-list li {
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .benefits-list li i {
+            color: var(--secondary);
+        }
+
+        .btn-plan {
+            width: 100%;
+            text-align: center;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: #FFF;
+        }
+        
+        .btn-plan:hover {
+            color: #FFF;
+        }
+        
+        .feature-box {
+            background: var(--bg-light);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 40px;
+        }
+
+        footer {
+            padding: 50px 0;
+            border-top: 1px solid var(--border-color);
+        }
+        
+        .footer-logo {
+            font-family: var(--font-display);
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        .social-links {
+            margin: 20px 0;
+        }
+        
+        .social-links a {
+            color: var(--text-dark);
+            font-size: 1.5rem;
+            margin: 0 15px;
+            transition: color 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            color: var(--primary);
+        }
+        
+        .copyright {
+            font-size: 0.9rem;
+            color: var(--text-dark);
+        }
+    </style>
 </head>
 <body>
 
-  <div class="container">
-    <div class="hero-container">
-      <img src="https://images.unsplash.com/photo-1554469384-e58fac16e23a?q=80&w=2940&auto=format&fit=crop" alt="Conexão de alta velocidade">
-      <div class="hero-overlay">
-        <h1 id="hero-title"></h1>
-        <p id="hero-tagline" class="tagline"></p>
-        <div class="android-only"><i class="fab fa-android"></i> Exclusivo para Android</div>
-      </div>
+    <div class="container">
+
+        <header class="hero">
+            <h1 id="hero-title"></h1>
+            <p id="hero-tagline" class="hero-tagline"></p>
+            <a href="#planos" class="btn">Conheça os Planos</a>
+        </header>
+
+        <main>
+            <section id="planos" class="section">
+                <h2>Planos Pessoais</h2>
+                <p class="section-description">Liberdade e velocidade para o seu dia a dia. Escolha o plano que mais combina com você.</p>
+                <div id="plans-grid-pessoal" class="plans-grid"></div>
+            </section>
+
+            <section id="revenda" class="section">
+                <h2>Seja um Revendedor</h2>
+                <p class="section-description">Transforme conexão em negócio. Ofereça internet de qualidade e crie sua fonte de renda com nossos planos de revenda.</p>
+                <div id="plans-grid-revenda" class="plans-grid"></div>
+            </section>
+
+            <section id="como-funciona" class="section">
+                <div class="feature-box">
+                    <h2>Como Funciona?</h2>
+                    <p class="section-description">Contratar é simples, rápido e seguro. Siga os passos e comece a navegar sem limites.</p>
+                    <div id="how-it-works-container" class="plans-grid"></div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <div id="footer-logo" class="footer-logo"></div>
+            <div id="social-links-container" class="social-links"></div>
+            <p id="footer-copyright" class="copyright"></p>
+        </footer>
+
     </div>
-    
-    <div class="content">
 
-      <div class="section">
-        <p id="intro-text" class="intro"></p>
-        <div class="compatibility">
-          <div class="operator"><i class="fas fa-sim-card"></i><span>Vivo</span></div>
-          <div class="operator"><i class="fas fa-sim-card"></i><span>Tim</span></div>
-          <div class="operator"><i class="fas fa-sim-card"></i><span>Claro</span></div>
-        </div>
-      </div>
-      
-      <div class="section">
-        <h2>Nossos Planos</h2>
-        <p class="section-description">Escolha o plano ideal para você e navegue sem preocupações, com a velocidade e estabilidade que você merece.</p>
-        <div id="plans-grid-pessoal" class="plans-grid"></div>
-      </div>
-      
-      <div id="reseller-section" class="section">
-        <h2>Seja um Revendedor</h2>
-        <p class="section-description">Tenha seu próprio negócio de internet com nosso painel de revendas. Escolha o modelo que melhor se adapta a você.</p>
-        <div class="pricing-tabs">
-          <button class="tab-btn active" onclick="openTab(event, 'monthly')">Plano Mensalista</button>
-        </div>
-        <div id="monthly" class="tab-content" style="display: block;"><div id="plans-grid-revenda-mensal" class="plans-grid"></div></div>
-      </div>
+    <script>
+        async function carregarConteudo() {
+            try {
+                const response = await fetch('/_data/settings.json?v=' + new Date().getTime());
+                if (!response.ok) throw new Error('Falha ao carregar configurações.');
+                const data = await response.json();
 
-      <div id="referral-section" class="section">
-        <div class="referral-program">
-          <h2 id="referral-title"></h2>
-          <p id="referral-tagline" class="section-description"></p>
-          <div class="plans-grid">
-            <div class="benefit-card" style="text-align: center; border: 1px solid #E5E7EB; padding: 24px; border-radius: 16px;">
-              <div class="benefit-icon" style="background-color: #28a745; width: 50px; height: 50px; font-size: 1.2rem;"><i class="fas fa-money-bill-wave"></i></div>
-              <h3>R$5 no PIX</h3><p>Por cada ativação</p>
-            </div>
-            <div class="benefit-card" style="text-align: center; border: 1px solid #E5E7EB; padding: 24px; border-radius: 16px;">
-              <div class="benefit-icon" style="background-color: var(--primary); width: 50px; height: 50px; font-size: 1.2rem;"><i class="fas fa-gift"></i></div>
-              <h3>1 Mês Grátis</h3><p>De internet ilimitada</p>
-            </div>
-          </div>
-          <a id="whatsapp-link-indicacao" href="" class="btn" style="margin: 32px auto 0; max-width: 250px;"><i class="fab fa-whatsapp"></i> Quero Participar</a>
-        </div>
-      </div>
+                // Hero
+                document.getElementById('hero-title').textContent = data.hero_title;
+                document.getElementById('hero-tagline').textContent = data.hero_tagline;
 
-      <div id="how-it-works-section" class="section">
-        <div class="how-it-works">
-          <h2>Como Funciona?</h2>
-          <div id="how-it-works-container" class="steps"></div>
-        </div>
-      </div>
-      
-      <div id="free-trial-section" class="section">
-          <h2 id="free-trial-title"></h2>
-          <p id="free-trial-text" class="section-description"></p>
-          <a id="whatsapp-link-teste-gratis" href="" class="btn btn-outline" style="max-width: 250px; margin: 0 auto;">Pedir Teste Grátis</a>
-      </div>
-      
-      <div id="working-hours-container" class="section working-hours"></div>
-    </div>
-    
-    <footer>
-      <div id="footer-logo-container" class="footer-logo"></div>
-      <p id="footer-copyright-text" class="footer-info"></p>
-      <div id="social-links-container" class="social-links" style="margin-top: 24px; margin-bottom: 24px;"></div>
-      <p class="footer-credit">Feito por <a href="https://trocodev.site" target="_blank" rel="noopener noreferrer">Troço Dev</a></p>
-    </footer>
-  </div>
-  
-  <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-  
-  <script>
-    function openTab(evt, tabName) {
-      const tabContents = document.getElementsByClassName("tab-content");
-      for (let i = 0; i < tabContents.length; i++) { tabContents[i].style.display = "none"; }
-      const tabButtons = document.getElementsByClassName("tab-btn");
-      for (let i = 0; i < tabButtons.length; i++) { tabButtons[i].className = tabButtons[i].className.replace(" active", ""); }
-      document.getElementById(tabName).style.display = "block";
-      evt.currentTarget.className += " active";
-    }
+                // Planos Pessoais
+                const pessoalContainer = document.getElementById('plans-grid-pessoal');
+                if (pessoalContainer && data.planos_pessoais) {
+                    pessoalContainer.innerHTML = data.planos_pessoais.map(plano => {
+                        const preco = parseFloat(plano.preco).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+                        return `
+                            <div class="plan-card ${plano.popular ? 'popular' : ''}">
+                                ${plano.popular ? '<div class="popular-badge">POPULAR</div>' : ''}
+                                <h3 class="plan-name">${plano.nome}</h3>
+                                <div class="plan-price">${preco}</div>
+                                <p class="plan-duration">${plano.duracao}</p>
+                                <ul class="benefits-list">
+                                    <li><i class="fas fa-check-circle"></i>Velocidade 4G/5G</li>
+                                    <li><i class="fas fa-check-circle"></i>Uso ilimitado</li>
+                                    <li><i class="fas fa-check-circle"></i>Suporte especializado</li>
+                                </ul>
+                                <a href="${data.links.whatsapp}?text=Olá! Quero o Plano ${plano.nome}" class="btn btn-plan">Contratar</a>
+                            </div>`;
+                    }).join('');
+                }
 
-    async function carregarConteudo() {
-      try {
-        const response = await fetch('/_data/settings.json?v=' + new Date().getTime());
-        if (!response.ok) throw new Error(`Erro de rede: ${response.statusText}`);
-        const data = await response.json();
+                // Planos de Revenda
+                const revendaContainer = document.getElementById('plans-grid-revenda');
+                if (revendaContainer && data.planos_revenda_mensal) {
+                    revendaContainer.innerHTML = data.planos_revenda_mensal.map(plano => {
+                        const preco = parseFloat(plano.preco).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+                        const beneficiosHTML = plano.beneficios.split(';').map(b => `<li><i class="fas fa-check-circle"></i>${b.trim()}</li>`).join('');
+                        return `
+                            <div class="plan-card">
+                                <h3 class="plan-name">${plano.nome}</h3>
+                                <div class="plan-price">${preco}<span class="decimal">/mês</span></div>
+                                <ul class="benefits-list">${beneficiosHTML}</ul>
+                                <a href="${data.links.whatsapp}?text=Olá! Tenho interesse no plano de revenda ${plano.nome}" class="btn btn-plan">Seja Revendedor</a>
+                            </div>`;
+                    }).join('');
+                }
+                
+                // Como Funciona
+                const howItWorksContainer = document.getElementById('how-it-works-container');
+                if (howItWorksContainer && data.how_it_works_steps) {
+                    howItWorksContainer.innerHTML = data.how_it_works_steps.map((step, index) => `
+                        <div class="step-card">
+                            <h3>${index + 1}. ${step.title}</h3>
+                            <p>${step.text}</p>
+                        </div>
+                    `).join('');
+                }
 
-        if (data.cores) {
-          document.documentElement.style.setProperty('--primary', data.cores.primaria);
-          document.documentElement.style.setProperty('--primary-dark', data.cores.primaria_escura);
-          document.documentElement.style.setProperty('--secondary', data.cores.secundaria);
+                // Rodapé
+                document.getElementById('footer-logo').textContent = data.footer.logo_text;
+                document.getElementById('footer-copyright').textContent = data.footer.copyright_text;
+
+                const socialContainer = document.getElementById('social-links-container');
+                if (socialContainer && data.redes_sociais) {
+                    socialContainer.innerHTML = data.redes_sociais.map(rede => 
+                        `<a href="${rede.url}" target="_blank" aria-label="${rede.nome}"><i class="${rede.icone}"></i></a>`
+                    ).join('');
+                }
+
+            } catch (error) {
+                console.error("Erro ao carregar conteúdo:", error);
+                document.body.innerHTML = "<p style='color:white;text-align:center;padding:50px;'>Ocorreu um erro ao carregar o site. Tente novamente mais tarde.</p>";
+            }
         }
 
-        document.getElementById('hero-title').textContent = data.hero_title;
-        document.getElementById('hero-tagline').textContent = data.hero_tagline;
-        document.getElementById('intro-text').innerHTML = data.intro_text;
-        
-        const whatsappBaseLink = data.links.whatsapp;
-        document.getElementById('whatsapp-link-indicacao').href = `${whatsappBaseLink}?text=Olá! Quero participar do Programa de Indicação da Troço Net.`;
-        document.getElementById('whatsapp-link-teste-gratis').href = `${whatsappBaseLink}?text=Olá! Quero fazer o teste grátis de 1 hora.`;
-        
-        if (data.visibility) {
-            document.getElementById('reseller-section').style.display = data.visibility.reseller_section ? 'block' : 'none';
-            document.getElementById('referral-section').style.display = data.visibility.referral_program ? 'block' : 'none';
-            document.getElementById('how-it-works-section').style.display = data.visibility.how_it_works_section ? 'block' : 'none';
-            document.getElementById('free-trial-section').style.display = data.visibility.free_trial_section ? 'block' : 'none';
-        }
+        document.addEventListener('DOMContentLoaded', carregarConteudo);
+    </script>
 
-        const generateHTML = (containerId, dataArray, htmlTemplate) => {
-          const container = document.getElementById(containerId);
-          if (!container) return;
-          container.innerHTML = (dataArray && dataArray.length > 0) ? dataArray.map(htmlTemplate).join('') : '';
-        };
-
-        generateHTML('plans-grid-pessoal', data.planos_pessoais, plano => {
-          const popularClass = plano.popular ? 'popular' : '';
-          const precoPartes = parseFloat(plano.preco).toFixed(2).split('.');
-          return `<div class="plan-card ${popularClass}"><div class="plan-name">${plano.nome}</div><div class="plan-price"><span class="currency">R$</span><span class="integer">${precoPartes[0]}</span><span class="decimal">,${precoPartes[1]}</span></div><div class="plan-duration">${plano.duracao}</div><ul class="benefits-list"><li>Velocidade 4G/5G</li><li>Uso ilimitado</li><li>Suporte especializado</li><li>Configuração fácil</li></ul><a href="${whatsappBaseLink}?text=Olá! Quero assinar o Plano ${plano.nome} de R$${plano.preco.toFixed(2)}" class="btn">Assinar Agora</a></div>`;
-        });
-        
-        generateHTML('plans-grid-revenda-mensal', data.planos_revenda_mensal, plano => {
-          const beneficiosHTML = plano.beneficios.split(';').map(b => `<li>${b.trim()}</li>`).join('');
-          return `<div class="plan-card business"><div class="plan-name">${plano.nome}</div><div class="plan-price"><span class="currency">R$</span><span class="integer">${parseInt(plano.preco)}</span><span class="decimal">,00/mês</span></div><ul class="benefits-list">${beneficiosHTML}</ul><a href="${whatsappBaseLink}?text=Olá! Quero assinar o plano de revenda de ${plano.nome} por R$${plano.preco}/mês" class="btn btn-business">Assinar Mensal</a></div>`;
-        });
-        
-        const howItWorksContainer = document.getElementById('how-it-works-container');
-        if (howItWorksContainer && data.how_it_works_steps) {
-            howItWorksContainer.innerHTML = data.how_it_works_steps.map((step, index) => `<div class="step"><div class="step-number">${index + 1}</div><p>${step.text}</p></div>`).join('');
-        }
-
-        if (data.free_trial) {
-            document.getElementById('free-trial-title').textContent = data.free_trial.title;
-            document.getElementById('free-trial-text').textContent = data.free_trial.text;
-        }
-
-        if (data.referral_program) {
-            document.getElementById('referral-title').textContent = data.referral_program.title;
-            document.getElementById('referral-tagline').textContent = data.referral_program.tagline;
-        }
-
-        const workingHoursContainer = document.getElementById('working-hours-container');
-        if (data.horario_atendimento && data.horario_atendimento.length > 0) {
-            workingHoursContainer.innerHTML = '<h2>Horário de Atendimento</h2><div class="hours-grid"></div>';
-            const hoursGrid = workingHoursContainer.querySelector('.hours-grid');
-            hoursGrid.innerHTML = data.horario_atendimento.map(group => {
-                const horariosHTML = group.horarios.map(h => `<div><i class="fas fa-clock"></i> ${h.horario}</div>`).join('');
-                return `<div class="hours-group"><strong><i class="${group.icone}"></i> ${group.titulo}</strong>${horariosHTML}</div>`;
-            }).join('');
-        }
-        
-        generateHTML('social-links-container', data.redes_sociais, link => `<a href="${link.url}" target="_blank" title="${link.nome}"><i class="${link.icone}"></i></a>`);
-        
-        const footerLogoContainer = document.getElementById('footer-logo-container');
-        if (data.footer && data.footer.logo_url) {
-            footerLogoContainer.innerHTML = `<img src="${data.footer.logo_url}" alt="Logótipo Troço Net" style="max-height: 40px;">`;
-        } else if (data.footer && data.footer.logo_text) {
-            footerLogoContainer.innerHTML = `${data.footer.logo_text}<span>NET</span>`;
-        }
-
-        const footerCopyright = document.getElementById('footer-copyright-text');
-        if (footerCopyright && data.footer) {
-            footerCopyright.textContent = data.footer.copyright_text;
-        }
-
-      } catch (error) {
-        console.error("Não foi possível carregar o conteúdo dinâmico:", error);
-      }
-    }
-    document.addEventListener('DOMContentLoaded', carregarConteudo);
-  </script>
 </body>
 </html>

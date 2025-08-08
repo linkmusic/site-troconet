@@ -126,10 +126,8 @@
         <p class="section-description">Tenha seu próprio negócio de internet com nosso painel de revendas. Escolha o modelo que melhor se adapta a você.</p>
         <div class="pricing-tabs">
           <button class="tab-btn active" onclick="openTab(event, 'monthly')">Plano Mensalista</button>
-          <button class="tab-btn" onclick="openTab(event, 'credits')">Plano por Créditos</button>
         </div>
         <div id="monthly" class="tab-content" style="display: block;"><div id="plans-grid-revenda-mensal" class="plans-grid"></div></div>
-        <div id="credits" class="tab-content"><div id="plans-grid-revenda-creditos" class="plans-grid"></div></div>
       </div>
 
       <div id="referral-section" class="section">
@@ -155,13 +153,6 @@
           <h2>Como Funciona?</h2>
           <div id="how-it-works-container" class="steps"></div>
         </div>
-      </div>
-      
-      <div class="section pix-box">
-        <h3>Pagamento via PIX</h3>
-        <p>Use a chave abaixo e envie o comprovante para o nosso WhatsApp.</p>
-        <div id="pix-key" class="pix-key"></div>
-        <p class="note"><i class="fas fa-info-circle"></i> Envie o comprovante para: <strong id="pix-contact"></strong></p>
       </div>
       
       <div id="free-trial-section" class="section">
@@ -208,8 +199,6 @@
         document.getElementById('hero-title').textContent = data.hero_title;
         document.getElementById('hero-tagline').textContent = data.hero_tagline;
         document.getElementById('intro-text').innerHTML = data.intro_text;
-        document.getElementById('pix-key').textContent = data.links.pix_key;
-        document.getElementById('pix-contact').textContent = data.links.whatsapp_number;
         
         const whatsappBaseLink = data.links.whatsapp;
         document.getElementById('whatsapp-link-indicacao').href = `${whatsappBaseLink}?text=Olá! Quero participar do Programa de Indicação da Troço Net.`;
@@ -237,11 +226,6 @@
         generateHTML('plans-grid-revenda-mensal', data.planos_revenda_mensal, plano => {
           const beneficiosHTML = plano.beneficios.split(';').map(b => `<li>${b.trim()}</li>`).join('');
           return `<div class="plan-card business"><div class="plan-name">${plano.nome}</div><div class="plan-price"><span class="currency">R$</span><span class="integer">${parseInt(plano.preco)}</span><span class="decimal">,00/mês</span></div><ul class="benefits-list">${beneficiosHTML}</ul><a href="${whatsappBaseLink}?text=Olá! Quero assinar o plano de revenda de ${plano.nome} por R$${plano.preco}/mês" class="btn btn-business">Assinar Mensal</a></div>`;
-        });
-
-        generateHTML('plans-grid-revenda-creditos', data.planos_revenda_creditos, plano => {
-          const beneficiosHTML = plano.beneficios.split(';').map(b => `<li>${b.trim()}</li>`).join('');
-          return `<div class="plan-card business"><div class="plan-name">${plano.nome}</div><div class="plan-price"><span class="currency">R$</span><span class="integer">${parseInt(plano.preco)}</span><span class="decimal">,00</span></div><ul class="benefits-list">${beneficiosHTML}</ul><a href="${whatsappBaseLink}?text=Olá! Quero comprar ${plano.nome} por R$${plano.preco}" class="btn btn-business">Comprar Créditos</a></div>`;
         });
         
         const howItWorksContainer = document.getElementById('how-it-works-container');

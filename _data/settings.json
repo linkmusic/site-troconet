@@ -8,36 +8,36 @@
     {
       "popular": false,
       "nome": "Diário",
-      "preco": 1,
+      "preco": 0.99,
       "duracao": "1 dia de internet ilimitada"
     },
     {
       "popular": false,
       "nome": "Semanal",
-      "preco": 5,
+      "preco": 4.99,
       "duracao": "7 dias de internet ilimitada"
     },
     {
       "nome": "Mensal",
-      "preco": 10,
+      "preco": 9.99,
       "duracao": "30 dias de internet ilimitada",
       "popular": false
     },
     {
       "nome": "Trimestral",
-      "preco": 15,
+      "preco": 14.99,
       "duracao": "90 dias de internet ilimitada",
       "popular": false
     },
     {
       "nome": "Semestral",
-      "preco": 20,
+      "preco": 19.98,
       "duracao": "180 dias de internet ilimitada",
       "popular": false
     },
     {
       "nome": "Anual",
-      "preco": 25,
+      "preco": 24.99,
       "duracao": "365 dias de internet ilimitada",
       "popular": true
     }
@@ -51,7 +51,7 @@
       "text": "Escolha seu plano preferido"
     },
     {
-      "text": "Faça o pagamento via PIX"
+      "text": "Faça o pagamento via PIX ou Teste Grátis"
     },
     {
       "text": "Envie o comprovante"
@@ -108,32 +108,32 @@
   "planos_revenda_mensal": [
     {
       "nome": "100 Logins",
-      "preco": 60,
+      "preco": 59.99,
       "beneficios": "100 acessos simultâneos;Painel básico;Suporte padrão"
     },
     {
       "nome": "200 Logins",
-      "preco": 70,
+      "preco": 69.99,
       "beneficios": "200 acessos simultâneos;Painel básico;Suporte prioritário"
     },
     {
       "nome": "300 Logins",
-      "preco": 120,
+      "preco": 119.99,
       "beneficios": "300 acessos simultâneos;Painel premium;Suporte prioritário"
     },
     {
       "nome": "1.000 Logins",
-      "preco": 140,
+      "preco": 139.99,
       "beneficios": "1.000 acessos simultâneos;Painel premium;Suporte dedicado;Melhor custo-benefício"
     },
     {
       "nome": "2.000 Logins",
-      "preco": 180,
+      "preco": 179.99,
       "beneficios": "2.000 acessos simultâneos;Painel premium;Suporte dedicado;Conta master"
     },
     {
       "nome": "10.000 Logins",
-      "preco": 240,
+      "preco": 239.99,
       "beneficios": "10.000 acessos simultâneos;Painel empresarial;Suporte 24/7;Conta master"
     }
   ],

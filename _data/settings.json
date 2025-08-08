@@ -6,6 +6,18 @@
   },
   "planos_pessoais": [
     {
+      "popular": false,
+      "nome": "Diário",
+      "preco": 1,
+      "duracao": "1 dia de internet ilimitada"
+    },
+    {
+      "popular": false,
+      "nome": "Semanal",
+      "preco": 5,
+      "duracao": "7 dias de internet ilimitada"
+    },
+    {
       "nome": "Mensal",
       "preco": 10,
       "duracao": "30 dias de internet ilimitada",
@@ -25,7 +37,7 @@
     },
     {
       "nome": "Anual",
-      "preco": 25,
+      "preco": 24,
       "duracao": "365 dias de internet ilimitada",
       "popular": true
     }

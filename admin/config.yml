@@ -7,8 +7,8 @@ public_folder: "/images/uploads"
 
 collections:
   - name: "configuracoes"
-    label: "Configurações do Site"
-    description: "Edite os textos, preços e links do site."
+    label: "Configurações do Site Troço Net"
+    description: "Edite aqui todos os textos, preços e links do site."
     files:
       - name: "geral"
         label: "Conteúdo Principal"
@@ -31,7 +31,7 @@ collections:
             name: "redes_sociais"
             widget: "list"
             fields:
-              - { label: "Nome da Rede (ex: Instagram)", name: "nome", widget: "string" }
+              - { label: "Nome da Rede", name: "nome", widget: "string" }
               - { label: "Link Completo (URL)", name: "url", widget: "string" }
               - { label: "Ícone (ex: fab fa-instagram)", name: "icone", widget: "string" }
           - label: "Passos 'Como Funciona'"
@@ -39,20 +39,27 @@ collections:
             widget: "list"
             fields:
               - { label: "Texto do Passo", name: "text", widget: "string" }
+          - label: "Secção 'Experimente Grátis'"
+            name: "free_trial"
+            widget: "object"
+            fields:
+              - { label: "Mostrar esta secção?", name: "visibility", widget: "boolean", default: true }
+              - { label: "Título da Secção", name: "title", widget: "string" }
+              - { label: "Texto Descritivo", name: "text", widget: "string" }
           - label: "Planos Pessoais"
             name: "planos_pessoais"
             widget: "list"
             summary: "{{fields.nome}} - R$ {{fields.preco}}"
             fields:
               - { label: "Nome do Plano", name: "nome", widget: "string" }
-              - { label: "Preço (use ponto para decimais, ex: 9.90)", name: "preco", widget: "number", value_type: "float" }
-              - { label: "Duração (ex: 30 dias)", name: "duracao", widget: "string" }
-              - { label: "É o plano mais popular?", name: "popular", widget: "boolean", default: false }
-          - label: "Planos de Revenda (Mensal)"
+              - { label: "Preço (use ponto para decimais, ex: 9.99)", name: "preco", widget: "number", value_type: "float" }
+              - { label: "Duração (ex: Acesso por 30 dias)", name: "duracao", widget: "string" }
+              - { label: "É o mais popular?", name: "popular", widget: "boolean", default: false }
+          - label: "Planos de Revenda (Mensalista)"
             name: "planos_revenda_mensal"
             widget: "list"
-            summary: "{{fields.nome}} - R$ {{fields.preco}}"
+            summary: "{{fields.nome}} - R$ {{fields.preco}}/mês"
             fields:
-              - { label: "Nome do Plano", name: "nome", widget: "string" }
-              - { label: "Preço (use ponto para decimais)", name: "preco", widget: "number", value_type: "float" }
+              - { label: "Nome do Pacote (ex: 100 acessos)", name: "nome", widget: "string" }
+              - { label: "Preço por Mês", name: "preco", widget: "number", value_type: "float" }
               - { label: "Benefícios (separados por ';')", name: "beneficios", widget: "string" }

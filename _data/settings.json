@@ -1,102 +1,13 @@
 {
-  "intro_text": "Navegue <strong class=\"highlight\">sem limites</strong> com nossos planos de internet ilimitada compatíveis com as principais operadoras do Brasil. <strong>Rápido, estável e sem bloqueios!</strong>",
-  "referral_program": {
-    "title": "📢 Programa de Indicação Troço Net",
-    "tagline": "Indique e GANHE! 😍"
+  "hero_title": "Troço Net",
+  "hero_tagline": "Internet ilimitada 4G/5G para Android",
+  "links": {
+    "whatsapp": "https://wa.me/558481518164"
   },
-  "planos_pessoais": [
-    {
-      "popular": false,
-      "nome": "Diário",
-      "preco": 0.99,
-      "duracao": "1 dia de internet ilimitada"
-    },
-    {
-      "popular": false,
-      "nome": "Semanal",
-      "preco": 4.99,
-      "duracao": "7 dias de internet ilimitada"
-    },
-    {
-      "nome": "Mensal",
-      "preco": 9.99,
-      "duracao": "30 dias de internet ilimitada",
-      "popular": false
-    },
-    {
-      "nome": "Trimestral",
-      "preco": 14.99,
-      "duracao": "90 dias de internet ilimitada",
-      "popular": false
-    },
-    {
-      "nome": "Semestral",
-      "preco": 19.98,
-      "duracao": "180 dias de internet ilimitada",
-      "popular": false
-    },
-    {
-      "nome": "Anual",
-      "preco": 24.99,
-      "duracao": "365 dias de internet ilimitada",
-      "popular": true
-    }
-  ],
-  "free_trial": {
-    "title": "Experimente Grátis",
-    "text": "Oferecemos 1 hora de internet ilimitada gratuita para você testar nossa qualidade antes de assinar qualquer plano!"
+  "footer": {
+    "logo_text": "TROÇO NET",
+    "copyright_text": "© 2025 Troço Net. Todos os direitos reservados."
   },
-  "how_it_works_steps": [
-    {
-      "text": "Escolha seu plano preferido"
-    },
-    {
-      "text": "Faça o pagamento via PIX ou Teste Grátis"
-    },
-    {
-      "text": "Envie o comprovante"
-    },
-    {
-      "text": "Receba as configurações"
-    }
-  ],
-  "planos_revenda_creditos": [
-    {
-      "nome": "10 Créditos",
-      "preco": 20,
-      "beneficios": "Sem mensalidade;Painel básico;Ativação imediata"
-    },
-    {
-      "nome": "20 Créditos",
-      "preco": 30,
-      "beneficios": "Sem mensalidade;Painel básico;Economia de R$10"
-    },
-    {
-      "nome": "50 Créditos",
-      "preco": 60,
-      "beneficios": "Sem mensalidade;Painel premium;Suporte prioritário"
-    },
-    {
-      "nome": "100 Créditos",
-      "preco": 120,
-      "beneficios": "Sem mensalidade;Painel premium;Melhor custo-benefício"
-    },
-    {
-      "nome": "500 Créditos",
-      "preco": 250,
-      "beneficios": "Sem mensalidade;Painel premium;Suporte dedicado"
-    },
-    {
-      "nome": "1.000 Créditos",
-      "preco": 300,
-      "beneficios": "Sem mensalidade;Painel empresarial;Suporte 24/7"
-    },
-    {
-      "nome": "10.000 Créditos",
-      "preco": 600,
-      "beneficios": "Sem mensalidade;Painel empresarial;Conta master;Melhor oferta"
-    }
-  ],
   "redes_sociais": [
     {
       "nome": "Instagram",
@@ -104,71 +15,31 @@
       "icone": "fab fa-instagram"
     }
   ],
-  "hero_tagline": "Internet ilimitada 4G/5G para Android",
+  "how_it_works_steps": [
+    { "text": "Escolha seu plano preferido" },
+    { "text": "Entre em contacto para o pagamento" },
+    { "text": "Receba as configurações e o app" },
+    { "text": "Navegue sem limites!" }
+  ],
+  "free_trial": {
+    "visibility": true,
+    "title": "Experimente Grátis por 1 Hora",
+    "text": "Quer testar antes de assinar? Peça um teste gratuito e comprove a velocidade e estabilidade da nossa conexão."
+  },
+  "planos_pessoais": [
+    { "nome": "Diário", "preco": 0.99, "duracao": "Acesso por 1 dia", "popular": false },
+    { "nome": "Semanal", "preco": 4.99, "duracao": "Acesso por 7 dias", "popular": false },
+    { "nome": "Mensal", "preco": 9.99, "duracao": "Acesso por 30 dias", "popular": true },
+    { "nome": "Trimestral", "preco": 14.99, "duracao": "Acesso por 3 meses", "popular": false },
+    { "nome": "Semestral", "preco": 19.99, "duracao": "Acesso por 6 meses", "popular": false },
+    { "nome": "Anual", "preco": 24.99, "duracao": "Acesso por 12 meses", "popular": false }
+  ],
   "planos_revenda_mensal": [
-    {
-      "nome": "100 Logins",
-      "preco": 59.99,
-      "beneficios": "100 acessos simultâneos;Painel básico;Suporte padrão"
-    },
-    {
-      "nome": "200 Logins",
-      "preco": 69.99,
-      "beneficios": "200 acessos simultâneos;Painel básico;Suporte prioritário"
-    },
-    {
-      "nome": "300 Logins",
-      "preco": 119.99,
-      "beneficios": "300 acessos simultâneos;Painel premium;Suporte prioritário"
-    },
-    {
-      "nome": "1.000 Logins",
-      "preco": 139.99,
-      "beneficios": "1.000 acessos simultâneos;Painel premium;Suporte dedicado;Melhor custo-benefício"
-    },
-    {
-      "nome": "2.000 Logins",
-      "preco": 179.99,
-      "beneficios": "2.000 acessos simultâneos;Painel premium;Suporte dedicado;Conta master"
-    },
-    {
-      "nome": "10.000 Logins",
-      "preco": 239.99,
-      "beneficios": "10.000 acessos simultâneos;Painel empresarial;Suporte 24/7;Conta master"
-    }
-  ],
-  "visibility": {
-    "reseller_section": true,
-    "referral_program": true,
-    "how_it_works_section": true,
-    "free_trial_section": true
-  },
-  "horario_atendimento": [
-    {
-      "titulo": "Segunda a Domingo",
-      "icone": "fas fa-calendar-day",
-      "horarios": [
-        {
-          "horario": "08h às 21h"
-        }
-      ]
-    }
-  ],
-  "hero_title": "Troço Net",
-  "cores": {
-    "primaria": "#e13f8f",
-    "primaria_escura": "#000000",
-    "secundaria": "#ffffff"
-  },
-  "links": {
-    "whatsapp": "https://wa.me/558481518164",
-    "whatsapp_number": "(84) 8151-8164",
-    "telegram": "https://t.me/suporte_trocodigital",
-    "pix_key": "CHAMA O SUPORTE"
-  },
-  "footer": {
-    "logo_url": "",
-    "logo_text": "TROÇO",
-    "copyright_text": "Conectando você ao que importa. © 2025 Troço Net - Todos os direitos reservados."
-  }
+    { "nome": "100 Logins", "preco": 59.99, "beneficios": "Painel de gestão;Suporte prioritário;Ativação na hora" },
+    { "nome": "200 Logins", "preco": 69.99, "beneficios": "Painel de gestão;Suporte prioritário;Ativação na hora" },
+    { "nome": "300 Logins", "preco": 119.99, "beneficios": "Painel de gestão;Suporte prioritário;Ativação na hora" },
+    { "nome": "1.000 Logins", "preco": 139.99, "beneficios": "Painel de gestão;Suporte prioritário;Ativação na hora" },
+    { "nome": "2.000 Logins", "preco": 179.99, "beneficios": "Painel de gestão;Suporte prioritário;Ativação na hora" },
+    { "nome": "10.000 Logins", "preco": 239.99, "beneficios": "Painel de gestão;Suporte prioritário;Ativação na hora" }
+  ]
 }

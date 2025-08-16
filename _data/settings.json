@@ -1,61 +1,13 @@
 {
-  "planos_pessoais": [
-    {
-      "nome": "Diário",
-      "preco": 0.99,
-      "duracao": "Acesso por 1 dia",
-      "popular": false
-    },
-    {
-      "nome": "Semanal",
-      "preco": 4.99,
-      "duracao": "Acesso por 7 dias",
-      "popular": false
-    },
-    {
-      "nome": "Mensal",
-      "preco": 9.99,
-      "duracao": "Acesso por 30 dias",
-      "popular": true
-    },
-    {
-      "nome": "Trimestral",
-      "preco": 14.99,
-      "duracao": "Acesso por 3 meses",
-      "popular": false
-    },
-    {
-      "nome": "Semestral",
-      "preco": 19.99,
-      "duracao": "Acesso por 6 meses",
-      "popular": false
-    },
-    {
-      "nome": "Anual",
-      "preco": 24.99,
-      "duracao": "Acesso por 12 meses",
-      "popular": false
-    }
-  ],
-  "free_trial": {
-    "visibility": true,
-    "title": "Experimente Grátis por 1 Hora",
-    "text": "Quer testar antes de assinar? Peça um teste gratuito e comprove a velocidade e estabilidade da nossa conexão."
+  "hero_title": "Troço Net",
+  "hero_tagline": "Internet ilimitada 4G/5G para Android",
+  "links": {
+    "whatsapp": "https://wa.me/558481518164"
   },
-  "how_it_works_steps": [
-    {
-      "text": "Escolha seu plano preferido"
-    },
-    {
-      "text": "Entre em contato para o pagamento ou teste grátis"
-    },
-    {
-      "text": "Receba as configurações e o app"
-    },
-    {
-      "text": "Navegue sem limites!"
-    }
-  ],
+  "footer": {
+    "logo_text": "TROÇO NET",
+    "copyright_text": "© 2025 Troço Net. Todos os direitos reservados."
+  },
   "redes_sociais": [
     {
       "nome": "Instagram",
@@ -83,6 +35,9 @@
     { "nome": "Anual", "preco": 24.99, "duracao": "Acesso por 12 meses", "popular": false }
   ],
   "planos_revenda_mensal": [
+    { "nome": "10 Logins", "preco": 5.99, "beneficios": "Painel de gestão;Suporte prioritário;Ativação na hora" },
+    { "nome": "25 Logins", "preco": 14.99, "beneficios": "Painel de gestão;Suporte prioritário;Ativação na hora" },
+    { "nome": "50 Logins", "preco": 29.99, "beneficios": "Painel de gestão;Suporte prioritário;Ativação na hora" },
     { "nome": "100 Logins", "preco": 59.99, "beneficios": "Painel de gestão;Suporte prioritário;Ativação na hora" },
     { "nome": "200 Logins", "preco": 69.99, "beneficios": "Painel de gestão;Suporte prioritário;Ativação na hora" },
     { "nome": "300 Logins", "preco": 119.99, "beneficios": "Painel de gestão;Suporte prioritário;Ativação na hora" },

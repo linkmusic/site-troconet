@@ -35,6 +35,9 @@
     { "nome": "Anual", "preco": 24.99, "duracao": "Acesso por 12 meses", "popular": false }
   ],
   "planos_revenda_mensal": [
+    { "nome": "10 Logins", "preco": 5.99, "beneficios": "Painel de gestão;Suporte prioritário;Ativação na hora" },
+    { "nome": "25 Logins", "preco": 14.99, "beneficios": "Painel de gestão;Suporte prioritário;Ativação na hora" },
+    { "nome": "50 Logins", "preco": 29.99, "beneficios": "Painel de gestão;Suporte prioritário;Ativação na hora" },
     { "nome": "100 Logins", "preco": 59.99, "beneficios": "Painel de gestão;Suporte prioritário;Ativação na hora" },
     { "nome": "200 Logins", "preco": 69.99, "beneficios": "Painel de gestão;Suporte prioritário;Ativação na hora" },
     { "nome": "300 Logins", "preco": 119.99, "beneficios": "Painel de gestão;Suporte prioritário;Ativação na hora" },
